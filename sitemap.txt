@@ -8,13 +8,18 @@
 
 
 <url>
-  <loc>https://cagandemirmr.github.io/</loc>
-  <lastmod>2025-05-13T19:21:37+00:00</lastmod>
+  <loc>https://www.cagandemirmr.com/</loc>
+  <lastmod>2025-05-16T17:53:42+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://cagandemirmr.github.io/index.html</loc>
-  <lastmod>2025-05-13T19:21:37+00:00</lastmod>
+  <loc>https://www.cagandemirmr.com/index.html</loc>
+  <lastmod>2025-05-16T17:53:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.cagandemirmr.com/apps.html</loc>
+  <lastmod>2025-05-16T17:53:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
