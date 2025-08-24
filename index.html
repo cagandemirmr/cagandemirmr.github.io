@@ -1,8 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	
--->
-<html>
+<html lang="tr">
 	<head>
 		<title>Çağan Demir Veri Analisti</title>
 		<meta charset="utf-8" />
@@ -13,9 +10,49 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.cagandemirmr.com/sitemap.xml">
 		<link rel="canonical" href="https://www.cagandemirmr.com/" />
+		<link rel="icon" href="/favicon.webp" type="image/webp">
+		
+		<!-- Navbar stilleri -->
+		<style>
+			/* Navbar'ın her zaman görünür olmasını sağla */
+			#nav {
+				display: flex !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+				transform: none !important;
+			}
+			
+			/* Mobil cihazlarda navigasyon öğelerinin tıklanabilir alanını büyüt */
+			@media screen and (max-width: 768px) {
+				#nav {
+					flex-direction: column;
+					align-items: center;
+				}
+				
+				#nav .links,
+				#nav .icons {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+				
+				#nav .links li,
+				#nav .icons li {
+					margin: 5px;
+				}
+				
+				#nav .links li a,
+				#nav .icons li a {
+					padding: 12px 15px;
+					min-height: 44px;
+					display: flex;
+					align-items: center;
+				}
+			}
+		</style>
+		
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<link rel="icon" href="/favicon.webp" type="image/webp">
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -23,11 +60,11 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>Çagan Demir <br />
+						<h1>Çağan Demir <br />
 						</h1>
-						<p>  SQL,PowerBi,Tableau ve Python da uzman Veri Analisti</p>
+						<p>SQL, PowerBi, Tableau ve Python da uzman Veri Analisti</p>
 						<ul class="actions">
-					
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
 
@@ -36,12 +73,11 @@
 						<a href="index.html" class="logo">Çağan Demir</a>
 					</header>
 
-				<!-- Nav:Buraya Pageleri ekleyebiliyorum -->
+				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
 							<li class="active"><a href="index.html">Projeler</a></li>
 							<li><a href="apps.html">Apps</a></li>
-
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/cagan-demir/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
@@ -55,11 +91,10 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 								<header class="major">
-									<h2><a href="https://www.linkedin.com/in/cagan-demir/">HAKKIMDA <br />
-									</a></h2>
+									<h2><a href="https://www.linkedin.com/in/cagan-demir/">HAKKIMDA</a></h2>
 									<p>Aslen mimarlık eğitimi almış olsam da, teknoloji ve veriye olan tutkum sayesinde veri bilimi alanına yöneldim. Yaşar Üniversitesi'nden Mimarlık lisans ve İç Mimarlık yüksek lisans derecelerim bulunuyor. Tasarımcı olarak edindiğim deneyim, analitik düşünme ve problem çözme becerilerimi geliştirdi. 
 									Bu yeteneklerimi şimdi veri analizi ve makine öğrenmesi projelerinde etkili bir şekilde kullanıyorum.
-                                                                        Python programlama dilinde sağlam bir temele sahibim ve sürekli olarak veri bilimi becerilerimi geliştirmeye odaklanıyorum. Farklı disiplinlerden gelen eğitim geçmişim, sorunlara yaratıcı ve çok yönlü çözümler üretmemi sağlıyor. Veri odaklı karar süreçlerini desteklemek, anlamlı içgörüler elde etmek ve yenilikçi çözümlere katkıda bulunmak için teknik yetkinliklerimi kullanmaya hazırım..</p>
+                                                                        Python programlama dilinde sağlam bir temele sahibim ve sürekli olarak veri bilimi becerilerimi geliştirmeye odaklanıyorum. Farklı disiplinlerden gelen eğitim geçmişim, sorunlara yaratıcı ve çok yönlü çözümler üretmemi sağlıyor. Veri odaklı karar süreçlerini desteklemek, anlamlı içgörüler elde etmek ve yenilikçi çözümlere katkıda bulunmak için teknik yetkinliklerimi kullanmaya hazırım.</p>
 								</header>
 								
 								<ul class="actions special">
@@ -71,72 +106,63 @@
 							<section class="posts">
 								<article>
 									<header>
-										<h2><a href="https://github.com/cagandemirmr/Play Store kullanıcı yorumları kullanıcı geri bildirimi analizi">Google Play Yorum Analizi<br />
-										</a></h2>
+										<h2><a href="https://github.com/cagandemirmr/Google-Play-Yorum-Analizi">Google Play Yorum Analizi</a></h2>
 									</header>
 									<a href="https://github.com/cagandemirmr/Google-Play-Yorum-Analizi" class="image fit"><img src="images\web_page_analyzing_ai.webp" alt="" loading="lazy"/></a>
 									<p>Bu proje, Google Play Store kullanıcı yorumlarını analiz ederek uygulamalar hakkında anlamlı içgörüler elde etmeyi amaçlamaktadır. 
 									 Çeşitli veri işleme ve veri analizi teknikleri kullanılarak, kullanıcı yorumlarının yapısı sınıflandırılmış, temel metrikler hesaplanmış ve geri bildirimler anlamlandırılmıştır.
                                                                          Proje kapsamında, metin madenciliği, duygu analizi ve kullanıcı davranış analizi gibi yöntemlerle yorumlar detaylı bir şekilde incelenmiş; bu sayede hem kullanıcıların beklentileri hem de uygulamaların güçlü ve zayıf yönleri ortaya çıkarılmıştır.
-									 Bu analizler, uygulama geliştiricileri ve ürün yöneticileri için veri odaklı kararlar alınmasına yardımcı olacak değerli içgörüler sunmaktadır. </p>
+									 Bu analizler, uygulama geliştiricileri ve ürün yöneticileri için veri odaklı kararlar alınmasına yardımcı olacak değerli içgörüler sunmaktadır.</p>
 									<ul class="actions special">
 										<li><a href="https://github.com/cagandemirmr/Google-Play-Yorum-Analizi" class="button">Projeyi Görüntüle</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-										<h2><a href="https://github.com/cagandemirmr/WOW_Churn_prediction">Oyuncu Kayıp Tahmini<br />
-										</a></h2>
+										<h2><a href="https://github.com/cagandemirmr/WOW_Churn_prediction">Oyuncu Kayıp Tahmini</a></h2>
 									</header>
 									<a href="https://github.com/cagandemirmr/WOW_Churn_prediction" class="image fit"><img src="images\wow_churn_prediction_model.webp" alt="" loading="lazy"/></a>
 									<p>Bu projenin temel amacı, oyun analitiği kapsamında oyuncu davranışlarını inceleyerek World of Warcraft özelinde oyuncu kaybını (churn) tahmin etmektir. Proje sürecinde, kullanıcı etkileşim verileri analiz edilmiş ve makine öğrenmesi algoritmaları kullanılarak oyuncuların oyunu bırakma olasılıkları öngörülmüştür.
-                                                                        Oyuncu sadakatini artırmak ve erken uyarı sistemleri geliştirmek için yapılan bu churn analizi, oyun geliştiricileri ve pazarlama ekipleri için veri odaklı stratejiler oluşturmada kritik içgörüler sağlamaktadır. Bu sayede hem oyuncu memnuniyeti artırılabilir hem de gelir kaybı minimize edilebilir.</p>
+                                                                        Oyuncu sadakatini artırmak và erken uyarı sistemleri geliştirmek için yapılan bu churn analizi, oyun geliştiricileri ve pazarlama ekipleri için veri odaklı stratejiler oluşturmada kritik içgörüler sağlamaktadır. Bu sayede hem oyuncu memnuniyeti artırılabilir hem de gelir kaybı minimize edilebilir.</p>
 									<ul class="actions special">
 										<li><a href="https://github.com/cagandemirmr/WOW_Churn_prediction" class="button">Projeyi Görüntüle</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-										<h2><a href="https://github.com/cagandemirmr/MavenFuzzy_Funnel_analysis">Tünel Analizi<br />
-										</a></h2>
+										<h2><a href="https://github.com/cagandemirmr/MavenFuzzy_Funnel_analysis">Tünel Analizi</a></h2>
 									</header>
 									<a href="https://github.com/cagandemirmr/MavenFuzzy_Funnel_analysis" class="image fit"><img src="images\funnel_analysis.webp" alt="" loading="lazy"/></a>
 									<p>Bu projede, Keşifsel Veri Analizi (EDA) ve Funnel Analizi kullanılarak, dijital pazarlama stratejilerinin etkinliği değerlendirilmiştir. SQL ile yapılan derinlemesine analizler, dijital pazarlama kampanyalarının farklı aşamalarındaki performansı ortaya koymuş ve stratejilerin veri odaklı olarak optimize edilmesini sağlamıştır.
-                                                                        Funnel analizi, kullanıcıların pazarlama sürecindeki adımlarda nasıl ilerlediğini inceleyerek, stratejilerin güçlü ve zayıf yönlerini belirlemiştir. Bu sayede, pazarlama ekipleri için daha etkili dijital stratejiler geliştirilmesine yönelik kritik içgörüler sağlanmıştır.</p>
+                                                                        Funnel analizi, kullanıcıların pazarlama sürecindeki adımlarda nasıl ilerlediğini inceleyerek, stratejilerin güçlü ve zayıf yönlerini belirlemiştır. Bu sayede, pazarlama ekipleri için daha etkili dijital stratejiler geliştirilmesine yönelik kritik içgörüler sağlanmıştır.</p>
 									<ul class="actions special">
 										<li><a href="https://github.com/cagandemirmr/MavenFuzzy_Funnel_analysis" class="button">Projeyi Görüntüle</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-
-										<h2><a href="https://github.com/cagandemirmr/Game_Chi_and_A-B_Testing-SQL">Mobil Oyunun Ki kare ve A/B testi <br />
-										</a></h2>
+										<h2><a href="https://github.com/cagandemirmr/Game_Chi_and_A-B_Testing-SQL">Mobil Oyunun Ki kare ve A/B testi</a></h2>
 									</header>
 									<a href="https://github.com/cagandemirmr/Game_Chi_and_A-B_Testing-SQL" class="image fit"><img src="images\a_b_testing_and_chi_square.webp" alt="" loading="lazy"/></a>
 									<p>Bu proje, oyunla ilgili kullanıcı verilerini analiz ederek, farklı onboarding (başlangıç eğitimi) varyantlarının etkinliğini değerlendirmeye odaklanmaktadır. A/B testi ve Chi-Kare testi gibi istatistiksel analiz yöntemleri kullanılarak, her bir varyantın kullanıcı etkileşimi üzerindeki etkisi incelenmiştir.
-                                                                         Veri analizi sürecinde, onboarding süreçlerinin farklı varyasyonlarının kullanıcı davranışları üzerindeki etkileri ölçülmüş ve en verimli kullanıcı deneyimini sağlayacak varyant belirlenmiştir. Bu sayede, oyun içi kullanıcı etkileşimini artırma ve kullanıcı bağlılığını sağlama adına veri odaklı stratejiler geliştirilmiştir</p>
+                                                                         Veri analizi sürecinde, onboarding süreçlerinin farklı varyasyonlarının kullanıcı davranışları üzerindeki etkileri ölçülmüş ve en verimli kullanıcı deneyimini sağlayacak varyant belirlenmiştır. Bu sayede, oyun içi kullanıcı etkileşimini artırma ve kullanıcı bağlılığını sağlama adına veri odaklı stratejiler geliştirilmiştir</p>
 									<ul class="actions special">
 										<li><a href="https://github.com/cagandemirmr/Game_Chi_and_A-B_Testing-SQL" class="button">Projeyi Görüntüle</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-
-										<h2><a href="C">Airbnb İstanbul Müsait ev Dashboardu<br />
-										</a></h2>
+										<h2><a href="https://github.com/cagandemirmr/Airbnb_Available_Houses">Airbnb İstanbul Müsait ev Dashboardu</a></h2>
 									</header>
 									<a href="https://github.com/cagandemirmr/Airbnb_Available_Houses" class="image fit"><img src="images\airbnb.webp" alt="" loading="lazy"/></a>
-									<p>Bu proje, İstanbul’daki Airbnb ilanları ve müsaitlik durumları hakkında içgörüler elde etmek amacıyla Airbnb verilerinin analizine odaklanmaktadır. Başlangıçta görselleştirme için Tableau kullanılmış olsa da, 1.000.000 satır sınırı nedeniyle veri hazırlığı ve optimizasyonu SQL ve Python kullanılarak gerçekleştirilmiştir. Son gösterge paneli, net ve uygulanabilir içgörüler sunmak amacıyla çubuk grafikler, bir çizgi grafik ve bir tablo içermektedir.</p>
+									<p>Bu proje, İstanbul'daki Airbnb ilanları ve müsaitlik durumları hakkında içgörüler elde etmek amacıyla Airbnb verilerinin analizine odaklanmaktadır. Başlangıçta görselleştirme için Tableau kullanılmış olsa da, 1.000.000 satır sınırı nedeniyle veri hazırlığı ve optimizasyonu SQL ve Python kullanılarak gerçekleştirilmiştır. Son gösterge paneli, net ve uygulanabilir içgörüler sunmak amacıyla çubuk grafikler, bir çizgi grafik ve bir tablo içermektedir.</p>
 									<ul class="actions special">
 										<li><a href="https://github.com/cagandemirmr/Airbnb_Available_Houses" class="button">Projeyi Görüntüle</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-
-										<h2><a href="https://github.com/cagandemirmr/Planth_Companies_Power_Bi">Bitki Şirketi Büyüme Analizi<br />
-										</a></h2>
+										<h2><a href="https://github.com/cagandemirmr/Planth_Companies_Power_Bi">Bitki Şirketi Büyüme Analizi</a></h2>
 									</header>
 									<a href="https://github.com/cagandemirmr/Planth_Companies_Power_Bi" class="image fit"><img src="images\plant_growth_company.webp" alt="" loading="lazy"/></a>
 									<p>Bu end-to-end Power BI projesi, veri temizleme ve veri görselleştirme süreçlerini bir araya getirerek iş zekası çözümleri sunmaktadır. Proje, verilerin doğru şekilde işlenmesini, eksik verilerin tamamlanmasını ve temizlenmesini sağlayarak, görsel raporlar oluşturmak için güçlü bir temel sunar.
@@ -147,27 +173,40 @@
 								</article>
 								<article>
 									<header>
-										<h2><a href="https://github.com/cagandemirmr/Churn_Analysis_of_Databel">Müşteri Kayıp Analizi <br />
-										</a></h2>
+										<h2><a href="https://github.com/cagandemirmr/Churn_Analysis_of_Databel">Müşteri Kayıp Analizi</a></h2>
 									</header>
 									<a href="https://github.com/cagandemirmr/Churn_Analysis_of_Databel" class="image fit"><img src="images\churning_person.webp" alt="" loading="lazy"/></a>
-									<p>Bu proje, Excel kullanarak müşteri kaybı (churn) nedenlerini analiz etmeye odaklanmaktadır. Müşteri davranışlarını inceleyerek, kaybı tetikleyen temel faktörler belirlenmiş ve veri analizi ile bu faktörlerin etkileri değerlendirilmiştir.
+									<p>Bu proje, Excel kullanarak müşteri kaybı (churn) nedenlerini analiz etmeye odaklanmaktadır. Müşteri davranışlarını inceleyerek, kaybı tetikleyen temel faktörler belirlenmiş ve veri analizi ile bu faktörlerın etkileri değerlendirilmiştir.
                                                                         Churn analizi sürecinde, müşteri verileri üzerinde yapılan derinlemesine analizlerle, hangi kullanıcı gruplarının daha fazla kayıp yaşadığı ve hangi stratejilerin etkili olduğu ortaya konmuştur. Bu tür analizler, şirketlerin müşteri sadakatini artırmak ve veri odaklı stratejiler geliştirmek için kritik içgörüler sunmaktadır.</p>
 									<ul class="actions special">
 										<li><a href="https://github.com/cagandemirmr/Churn_Analysis_of_Databel" class="button">Projeyi Görüntüle</a></li>
 									</ul>
 								</article>
+								
+								<!-- BURAYA YENİ PROJELER EKLEYEBİLİRSİNİZ -->
+								<!--
+								<article>
+									<header>
+										<h2><a href="LİNK">YENİ PROJE BAŞLIĞI</a></h2>
+									</header>
+									<a href="LİNK" class="image fit"><img src="images/RESIM_DOSYASI.webp" alt="" loading="lazy"/></a>
+									<p>PROJE AÇIKLAMASI</p>
+									<ul class="actions special">
+										<li><a href="LİNK" class="button">Projeyi Görüntüle</a></li>
+									</ul>
+								</article>
+								-->
+								
 							</section>
 
-
+					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<section class="split contact">
 							<section class="alt">
-								<h3>Addres</h3>
-								<p>Urla,İzmir<br />
-								</p>
+								<h3>Adres</h3>
+								<p>Urla, İzmir</p>
 							</section>
 							<section>
 								<h3>Telefon</h3>
@@ -197,6 +236,28 @@
 		<!-- Scripts -->
 			<script src="assets/js/optimized.js"></script>
 			
+			<!-- Navbar görünürlük scripti -->
+			<script>
+				// Sayfa boyutu değiştiğinde navbar'ın görünür kalmasını sağla
+				window.addEventListener('resize', function() {
+					var nav = document.getElementById('nav');
+					if (nav) {
+						nav.style.display = 'flex';
+						nav.style.opacity = '1';
+						nav.style.visibility = 'visible';
+					}
+				});
+				
+				// Sayfa yüklendiğinde de aynı işlemi yap
+				window.addEventListener('load', function() {
+					var nav = document.getElementById('nav');
+					if (nav) {
+						nav.style.display = 'flex';
+						nav.style.opacity = '1';
+						nav.style.visibility = 'visible';
+					}
+				});
+			</script>
 
 	</body>
 </html>

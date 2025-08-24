@@ -1,34 +1,78 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="tr">
 	<head>
 		<link rel="icon" href="/favicon.png" type="image/png">
 		<title>Web Uygulamaları | Yapay Zeka Destekli Uygulama Koleksiyonu</title>
     	<meta charset="utf-8" />
-    	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    	
     	<meta name="description" content="Makine öğrenmesi ve derin öğrenme algoritmaları kullanılarak geliştirilmiş çeşitli web uygulamaları. Görsel analizden yapay zeka destekli araçlara kadar farklı ihtiyaçlara uygun ücretsiz çözümler.">
     	<meta name="keywords" content="web uygulamaları, yapay zeka, makine öğrenmesi, derin öğrenme, renk analizi, ücretsiz araçlar, AI uygulamaları, Python projeleri, proje galerisi">
     	<meta name="author" content="Çağan Demir">
-    	<link rel="canonical" href="https://cagandemirmr.com/apps.html" /> <meta property="og:title" content="AI Destekli Web Uygulamaları">
+    	<link rel="canonical" href="https://cagandemirmr.com/apps.html" /> 
+    	<meta property="og:title" content="AI Destekli Web Uygulamaları">
     	<meta property="og:description" content="Farklı alanlara yönelik geliştirilmiş yapay zeka destekli web uygulamalarını keşfedin. Tamamen ücretsizdir.">
-    	<meta property="og:image" content="https://cagandemirmr.com/images/uygulama-galerisi-kapak.png"> <meta property="og:url" content="https://cagandemirmr.com/apps.html">
+    	<meta property="og:image" content="https://cagandemirmr.com/images/uygulama-galerisi-kapak.png"> 
+    	<meta property="og:url" content="https://cagandemirmr.com/apps.html">
     	<meta property="og:type" content="website">
 
     	<meta name="twitter:card" content="summary_large_image">
     	<meta name="twitter:title" content="AI Tabanlı Web Uygulamaları">
     	<meta name="twitter:description" content="Makine öğrenmesiyle geliştirilmiş web uygulamalarına göz atın. Sanat, analiz ve üretken projeler için ideal.">
     	<meta name="twitter:image" content="https://cagandemirmr.com/images/uygulama-galerisi-kapak.png">
+		
+		<meta name="theme-color" content="#ffffff">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<!-- Navbar'ın her zaman görünür olması için basit çözüm -->
+		<style>
+			/* Navbar'ın her zaman görünür olmasını sağla */
+			#nav {
+				display: flex !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+				transform: none !important;
+			}
+			
+			/* Mobil cihazlarda navigasyon öğelerinin tıklanabilir alanını büyüt */
+			@media screen and (max-width: 768px) {
+				#nav {
+					flex-direction: column;
+					align-items: center;
+				}
+				
+				#nav .links,
+				#nav .icons {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+				
+				#nav .links li,
+				#nav .icons li {
+					margin: 5px;
+				}
+				
+				#nav .links li a,
+				#nav .icons li a {
+					padding: 12px 15px;
+					min-height: 44px;
+					display: flex;
+					align-items: center;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<div id="wrapper" class="fade-in">
 
 			<div id="intro">
-				<h1>Uygulamalar<br>
-				</h1>
+				<h1>Uygulamalar</h1>
 				<p>Burada makine öğrenmesi ve derin öğrenme algoritmalarıyla oluşturmuş olduğum web uygulamalarını bulabilirsiniz.</p>
 				<ul class="actions">
 					<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
@@ -51,24 +95,22 @@
 				<section class="posts">
 					<article>
 						<header>
-							<h2><a href="https://renk-paleti-bulma-aplikasyonu.onrender.com/" rel="noopener">Renk Analizi İçin Ücretsiz <br>
-								ve Kullanıcı Dostu Web Uygulaması</a></h2>
+							<h2><a href="https://renk-paleti-bulma-aplikasyonu.onrender.com/" rel="noopener">Renk Analizi İçin Ücretsiz ve Kullanıcı Dostu Web Uygulaması</a></h2>
 						</header>
-						<a href="https://renk-paleti-bulma-aplikasyonu.onrender.com/" class="image fit"><img src="images\renk_analizcisi.webp" alt="" loading="lazy" /></a>
+						<a href="https://renk-paleti-bulma-aplikasyonu.onrender.com/" class="image fit"><img src="images/renk_analizcisi.webp" alt="Renk Analizi Uygulaması" loading="lazy" /></a>
 						<p>Bu web uygulaması, kar amacı gütmeyen bir şekilde geliştirilmiştir. Amacım; tez çalışmaları, sanatsal projeler ve ticari içerikler üreten kullanıcıların renk analizi süreçlerini kolaylaştırmak ve bu süreçte keyif almalarını sağlamaktır. Yüklenmesi 10dk sürebilir.</p>
 						<ul class="actions special">
-							<li><a href="https://renk-paleti-bulma-aplikasyonu.onrender.com/" class="button">Uygulamaya Gİt</a></li>
+							<li><a href="https://renk-paleti-bulma-aplikasyonu.onrender.com/" class="button">Uygulamaya Git</a></li>
 						</ul>
 					</article>
 					<article>
 						<header>
-							<h2><a href="https://huggingface.co/spaces/Cgndmr/ikincieltahmin">İkinci El Araba Tahmin <br>
-								Kullanıcı Dostu Web Uygulaması</a></h2>
+							<h2><a href="https://huggingface.co/spaces/Cgndmr/ikincieltahmin">İkinci El Araba Tahmin Kullanıcı Dostu Web Uygulaması</a></h2>
 						</header>
-						<a href="https://huggingface.co/spaces/Cgndmr/ikincieltahmin" class="image fit"><img src="images\luxury_car.webp" alt="" loading="lazy" /></a>
+						<a href="https://huggingface.co/spaces/Cgndmr/ikincieltahmin" class="image fit"><img src="images/luxury_car.webp" alt="İkinci El Araba Tahmin Uygulaması" loading="lazy" /></a>
 						<p>Bu web uygulaması, kullanıcıların araçlarına ait marka, model, kasa tipi, kilometre gibi bilgileri girerek aracın ikinci el piyasasındaki yaklaşık dolar bazlı değerini hızlı ve doğru bir şekilde öğrenmelerini sağlar. Kullanıcı dostu arayüzü sayesinde araç değerleme işlemi sadece birkaç adımda tamamlanır. Uygulama, geçmiş satış verileri ve piyasa analizlerine dayalı tahminleme modelleri kullanılarak geliştirilmiştir. Python tabanlı altyapısı sayesinde veriler işlenir ve kullanıcıya güvenilir bir fiyat aralığı sunulur.</p>
 						<ul class="actions special">
-							<li><a href="https://huggingface.co/spaces/Cgndmr/ikincieltahmin" class="button">Uygulamaya Gİt</a></li>
+							<li><a href="https://huggingface.co/spaces/Cgndmr/ikincieltahmin" class="button">Uygulamaya Git</a></li>
 						</ul>
 					</article>
 				</section>
@@ -76,5 +118,28 @@
 		</div>
 
 		<script src="assets/js/optimized.js"></script>
+		
+		<!-- Navbar'ın her zaman görünür kalmasını sağlayacak basit script -->
+		<script>
+			// Sayfa boyutu değiştiğinde navbar'ın görünür kalmasını sağla
+			window.addEventListener('resize', function() {
+				var nav = document.getElementById('nav');
+				if (nav) {
+					nav.style.display = 'flex';
+					nav.style.opacity = '1';
+					nav.style.visibility = 'visible';
+				}
+			});
+			
+			// Sayfa yüklendiğinde de aynı işlemi yap
+			window.addEventListener('load', function() {
+				var nav = document.getElementById('nav');
+				if (nav) {
+					nav.style.display = 'flex';
+					nav.style.opacity = '1';
+					nav.style.visibility = 'visible';
+				}
+			});
+		</script>
 	</body>
 </html>
