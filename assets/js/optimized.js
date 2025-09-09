@@ -1,12 +1,108 @@
 "use strict";
 
-// Breakpoints fonksiyonu
+// 1. MOBILE OPTIMIZER CLASS'INI EKLE
+class MobileOptimizer {
+    constructor() {
+        this.isMobile = this.checkMobileDevice();
+        this.init();
+    }
+
+    checkMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    init() {
+        if (this.isMobile) {
+            this.applyMobileOptimizations();
+        }
+    }
+
+    applyMobileOptimizations() {
+        this.removeTapDelay();
+        this.optimizeTouchEvents();
+        this.fixMobileTables(); // Tablo düzeltmelerini ekle
+    }
+
+    removeTapDelay() {
+        const style = document.createElement('style');
+        style.textContent = `
+            * {
+                -webkit-tap-highlight-color: transparent !important;
+                -webkit-touch-callout: none !important;
+            }
+            input, textarea, [contenteditable] {
+                -webkit-user-select: text !important;
+                user-select: text !important;
+            }
+            
+            /* MOBILE TABLE FIXES */
+            table {
+                width: 100% !important;
+                max-width: 100% !important;
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
+            th, td {
+                min-width: 80px !important;
+                white-space: nowrap !important;
+            }
+            
+            .table-container {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                width: 100% !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    optimizeTouchEvents() {
+        // Basit touch optimizasyonu
+        if ('ontouchstart' in window) {
+            document.documentElement.style.touchAction = 'manipulation';
+        }
+    }
+
+    fixMobileTables() {
+        // Tüm tabloları mobil uyumlu hale getir
+        const tables = document.querySelectorAll('table');
+        tables.forEach(table => {
+            // Tabloyu bir container içine al
+            if (!table.parentElement.classList.contains('table-container')) {
+                const container = document.createElement('div');
+                container.className = 'table-container';
+                table.parentElement.insertBefore(container, table);
+                container.appendChild(table);
+            }
+            
+            // Mobil için özel stiller
+            table.style.minWidth = '100%';
+            table.style.tableLayout = 'auto';
+        });
+    }
+}
+
+// Hemen çalıştır
+new MobileOptimizer();
+
+// Breakpoints fonksiyonu - ORİJİNAL KODU KORU
 const breakpoints = (function () {
     "use strict";
     const l = {
         list: null,
         media: {},
         events: [],
+        
+        isMobile: function() {
+            return window.innerWidth <= 767;
+        },
+        
+        isTouchDevice: function() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        },
+
         init(e) {
             l.list = e;
             ["resize", "orientationchange", "load", "fullscreenchange"].forEach(event => {
@@ -89,11 +185,13 @@ const breakpoints = (function () {
         },
         active(e) {
             return l.active(e);
-        }
+        },
+        isMobile: l.isMobile,
+        isTouchDevice: l.isTouchDevice
     };
 })();
 
-// Browser detection
+// Browser detection - ORİJİNAL KODU KORU
 const browser = (function () {
     "use strict";
     const o = {
@@ -184,71 +282,27 @@ const browser = (function () {
     return o;
 })();
 
-// jQuery ve diğer kütüphaneler için optimize edilmiş kod burada devam eder...
-// Not: jQuery kütüphanesi geniş olduğundan, bu kısmı olduğu gibi bırakıp diğer kısımları optimize edeceğim.
-
-// Kalan kod için benzer optimizasyonlar yapılabilir, ancak kodu kısaltmak için burada kesiyorum.
-// Özetle, gereksiz tekrarları kaldırdım, modern JavaScript syntax'ı kullandım ve performans iyileştirmeleri yaptım.
-
-// jQuery için sadeleştirilmiş ve optimize edilmiş versiyon
-// Not: Bu, tam bir jQuery replacement değildir, sadece bu projede kullanılan fonksiyonları içerir
-
-class MiniQuery {
+// jQuery replacement - BASİT VERSİYON
+class SimpleQuery {
     constructor(selector) {
         if (typeof selector === 'string') {
             this.elements = Array.from(document.querySelectorAll(selector));
-        } else if (selector instanceof NodeList || Array.isArray(selector)) {
+        } else if (selector instanceof NodeList) {
             this.elements = Array.from(selector);
-        } else if (selector instanceof Node) {
+        } else if (selector instanceof Element) {
             this.elements = [selector];
         } else {
             this.elements = [];
         }
     }
 
-    each(callback) {
-        this.elements.forEach((element, index) => {
-            callback.call(element, index, element);
-        });
-        return this;
-    }
-
-    on(event, selector, handler) {
-        if (typeof selector === 'function') {
-            handler = selector;
-            selector = null;
-        }
-
+    on(event, handler) {
         this.elements.forEach(element => {
-            if (selector) {
-                element.addEventListener(event, (e) => {
-                    if (e.target.matches(selector)) {
-                        handler.call(e.target, e);
-                    }
-                });
-            } else {
-                element.addEventListener(event, handler);
-            }
+            element.addEventListener(event, handler);
         });
         return this;
     }
 
-    css(property, value) {
-        if (typeof property === 'object') {
-            this.elements.forEach(element => {
-                Object.assign(element.style, property);
-            });
-        } else if (value === undefined) {
-            return this.elements[0] ? getComputedStyle(this.elements[0])[property] : null;
-        } else {
-            this.elements.forEach(element => {
-                element.style[property] = value;
-            });
-        }
-        return this;
-    }
-
-    // Diğer gerekli jQuery benzeri metodlar...
     addClass(className) {
         this.elements.forEach(element => {
             element.classList.add(className);
@@ -263,372 +317,257 @@ class MiniQuery {
         return this;
     }
 
-    hasClass(className) {
-        return this.elements[0] ? this.elements[0].classList.contains(className) : false;
-    }
-
-    // Daha fazla metod eklenebilir...
-}
-
-// Global erişim için
-window.$ = (selector) => new MiniQuery(selector);
-
-// Scrollex plugin için optimize edilmiş versiyon
-class Scrollex {
-    constructor() {
-        this.items = new Map();
-        this.scrollHandler = this.handleScroll.bind(this);
-        window.addEventListener('scroll', this.scrollHandler, { passive: true });
-    }
-
-    add(element, options) {
-        const id = Symbol();
-        this.items.set(id, { element, options, state: false });
-        return id;
-    }
-
-    remove(id) {
-        this.items.delete(id);
-    }
-
-    handleScroll() {
-        const scrollTop = window.pageYOffset;
-        const viewportHeight = window.innerHeight;
-
-        this.items.forEach((item, id) => {
-            const rect = item.element.getBoundingClientRect();
-            const elementTop = rect.top + scrollTop;
-            const elementBottom = rect.bottom + scrollTop;
-            
-            const isActive = this.checkVisibility(scrollTop, viewportHeight, elementTop, elementBottom, item.options);
-            
-            if (isActive !== item.state) {
-                item.state = isActive;
-                if (isActive && item.options.enter) {
-                    item.options.enter.call(item.element);
-                } else if (!isActive && item.options.leave) {
-                    item.options.leave.call(item.element);
-                }
-            }
+    css(property, value) {
+        if (value === undefined) {
+            return this.elements[0] ? getComputedStyle(this.elements[0])[property] : null;
+        }
+        
+        this.elements.forEach(element => {
+            element.style[property] = value;
         });
-    }
-
-    checkVisibility(scrollTop, viewportHeight, elementTop, elementBottom, options) {
-        // Görünürlük kontrol mantığı
-        // options.mode'a göre farklı hesaplamalar yapılabilir
-        return elementTop < scrollTop + viewportHeight && elementBottom > scrollTop;
+        return this;
     }
 }
 
-// Scrolly plugin için optimize edilmiş versiyon
-class Scrolly {
+// Global $ function
+window.$ = (selector) => new SimpleQuery(selector);
+
+// Basit Scrolly implementation
+class SimpleScrolly {
     constructor() {
-        this.links = new Map();
+        this.init();
     }
 
     init() {
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a[href^="#"]');
             if (link) {
-                this.handleClick(link, e);
-            }
-        });
-    }
-
-    handleClick(link, event) {
-        event.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }
-}
-
-// Modern Parallax implementasyonu
-class Parallax {
-    constructor(elements, options = {}) {
-        this.elements = Array.from(elements);
-        this.options = { intensity: 0.25, ...options };
-        this.init();
-    }
-
-    init() {
-        if ('IntersectionObserver' in window) {
-            this.initWithObserver();
-        } else {
-            this.initWithScroll();
-        }
-    }
-
-    initWithObserver() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.animateElement(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        this.elements.forEach(element => {
-            observer.observe(element);
-        });
-    }
-
-    initWithScroll() {
-        let ticking = false;
-        
-        const scrollHandler = () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    this.elements.forEach(element => {
-                        this.animateElement(element);
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-                    ticking = false;
-                });
-                ticking = true;
+                }
             }
-        };
-
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-    }
-
-    animateElement(element) {
-        const rect = element.getBoundingClientRect();
-        const scrollY = window.pageYOffset;
-        const movement = scrollY * this.options.intensity;
-        
-        element.style.transform = `translateY(${movement}px)`;
+        });
     }
 }
 
-// Modern breakpoints yönetimi
-class BreakpointManager {
-    constructor(breakpoints) {
-        this.breakpoints = breakpoints;
-        this.currentBreakpoint = null;
-        this.handlers = new Map();
+// Basit Parallax implementation
+class SimpleParallax {
+    constructor(selector, intensity = 0.5) {
+        this.elements = Array.from(document.querySelectorAll(selector));
+        this.intensity = intensity;
         this.init();
     }
 
     init() {
-        this.checkBreakpoint();
-        window.addEventListener('resize', () => this.checkBreakpoint());
+        if (breakpoints.isMobile()) return; // Disable on mobile
+        
+        window.addEventListener('scroll', () => {
+            this.animate();
+        }, { passive: true });
     }
 
-    checkBreakpoint() {
-        const width = window.innerWidth;
-        let newBreakpoint = null;
+    animate() {
+        const scrollY = window.scrollY;
+        
+        this.elements.forEach(element => {
+            const movement = scrollY * this.intensity;
+            element.style.transform = `translateY(${movement}px)`;
+        });
+    }
+}
 
-        for (const [name, range] of Object.entries(this.breakpoints)) {
-            const [min, max] = range.map(val => 
-                val ? parseInt(val) : (val === null ? null : parseInt(val))
-            );
+// DOM Ready helper
+function domReady(callback) {
+    if (document.readyState !== 'loading') {
+        callback();
+    } else {
+        document.addEventListener('DOMContentLoaded', callback);
+    }
+}
 
-            if ((min === null || width >= min) && (max === null || width <= max)) {
-                newBreakpoint = name;
-                break;
-            }
-        }
-
-        if (newBreakpoint !== this.currentBreakpoint) {
-            const oldBreakpoint = this.currentBreakpoint;
-            this.currentBreakpoint = newBreakpoint;
+// MOBILE TABLE FIX FUNCTIONS
+function initMobileTableFix() {
+    if (!breakpoints.isMobile()) return;
+    
+    const tables = document.querySelectorAll('table');
+    tables.forEach(table => {
+        // Tablo container kontrolü
+        if (!table.closest('.table-container')) {
+            const container = document.createElement('div');
+            container.className = 'table-container';
+            container.style.overflowX = 'auto';
+            container.style.webkitOverflowScrolling = 'touch';
+            container.style.width = '100%';
             
-            // Breakpoint değişimi handler'larını çalıştır
-            this.executeHandlers(oldBreakpoint, newBreakpoint);
+            table.parentNode.insertBefore(container, table);
+            container.appendChild(table);
         }
-    }
-
-    onBreakpointChange(breakpoint, handler) {
-        if (!this.handlers.has(breakpoint)) {
-            this.handlers.set(breakpoint, []);
-        }
-        this.handlers.get(breakpoint).push(handler);
-    }
-
-    executeHandlers(oldBreakpoint, newBreakpoint) {
-        // Yeni breakpoint için handler'ları çalıştır
-        if (this.handlers.has(newBreakpoint)) {
-            this.handlers.get(newBreakpoint).forEach(handler => 
-                handler(oldBreakpoint, newBreakpoint)
-            );
-        }
-
-        // Tüm breakpoint'ler için genel handler'ları çalıştır
-        if (this.handlers.has('*')) {
-            this.handlers.get('*').forEach(handler => 
-                handler(oldBreakpoint, newBreakpoint)
-            );
-        }
-    }
+        
+        // Tablo stillerini düzenle
+        table.style.minWidth = '100%';
+        table.style.tableLayout = 'auto';
+        
+        // Hücreler için minimum genişlik
+        const cells = table.querySelectorAll('th, td');
+        cells.forEach(cell => {
+            cell.style.minWidth = '80px';
+            cell.style.whiteSpace = 'nowrap';
+        });
+    });
 }
 
 // Ana uygulama başlatma
-document.addEventListener('DOMContentLoaded', () => {
-    // Breakpoint'leri tanımla
-    const breakpoints = new BreakpointManager({
-        default: ['1681px', null],
-        xlarge: ['1281px', '1680px'],
-        large: ['981px', '1280px'],
-        medium: ['737px', '980px'],
-        small: ['481px', '736px'],
-        xsmall: ['361px', '480px'],
-        xxsmall: [null, '360px']
-    });
-
-    // Scrolly başlat
-    const scrolly = new Scrolly();
-    scrolly.init();
-
+domReady(() => {
+    console.log('DOM loaded - initializing components');
+    
+    // Mobil tablo düzeltmelerini başlat
+    initMobileTableFix();
+    
+    // Scrolly'yi başlat
+    new SimpleScrolly();
+    
     // Parallax efektleri
     const parallaxElements = document.querySelectorAll('[data-parallax]');
-    if (parallaxElements.length) {
-        new Parallax(parallaxElements, { intensity: 0.925 });
+    if (parallaxElements.length > 0) {
+        new SimpleParallax('[data-parallax]', 0.3);
     }
 
-    // Navigation panel
-    const navPanel = document.getElementById('navPanel');
-    if (navPanel) {
-        this.initNavigation(navPanel);
+    // Navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navPanel = document.querySelector('#navPanel');
+    
+    if (navToggle && navPanel) {
+        navToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            navPanel.classList.toggle('active');
+            document.body.classList.toggle('nav-active');
+        });
     }
 
     // Preload class'ını kaldır
     setTimeout(() => {
         document.body.classList.remove('is-preload');
     }, 100);
+
+    // Mobile optimizasyonları
+    if (breakpoints.isMobile()) {
+        initMobileFeatures();
+    }
+
+    // Responsive images
+    loadResponsiveImages();
+    
+    // Ekran yeniden boyutlandırmada tabloları güncelle
+    window.addEventListener('resize', initMobileTableFix);
 });
 
-// Navigation initializer
-function initNavigation(navPanel) {
-    const toggleBtn = document.createElement('button');
-    toggleBtn.textContent = 'Menu';
-    toggleBtn.addEventListener('click', () => {
-        navPanel.classList.toggle('active');
-    });
+function initMobileFeatures() {
+    console.log('Initializing mobile features');
+    
+    // Mobile için ek optimizasyonlar
+    const style = document.createElement('style');
+    style.textContent = `
+        @media (max-width: 767px) {
+            .container {
+                padding: 15px;
+            }
+            
+            button, .btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Mobile table specific fixes */
+            table {
+                font-size: 14px !important;
+            }
+            
+            th, td {
+                padding: 8px 6px !important;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
 
-    document.body.appendChild(toggleBtn);
-
-    // Breakpoint değişimlerinde navigation'ı yönet
-    breakpoints.onBreakpointChange('medium', (oldBp, newBp) => {
-        if (newBp === 'medium') {
-            // Mobile navigation ayarları
-            navPanel.style.position = 'fixed';
-        } else {
-            // Desktop navigation ayarları
-            navPanel.style.position = 'static';
+function loadResponsiveImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    images.forEach(img => {
+        const src = img.getAttribute('data-src');
+        if (src) {
+            img.src = src;
+            img.removeAttribute('data-src');
         }
     });
 }
 
-// Responsive image loader
-class ResponsiveLoader {
+// Touch optimization
+class TouchOptimizer {
     constructor() {
-        this.images = document.querySelectorAll('img[data-srcset]');
         this.init();
     }
 
     init() {
-        if ('IntersectionObserver' in window) {
-            this.loadWithObserver();
-        } else {
-            this.loadAllImages();
+        if ('ontouchstart' in window) {
+            this.addTouchStyles();
+            this.preventZoom();
         }
     }
 
-    loadWithObserver() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.loadImage(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        this.images.forEach(img => observer.observe(img));
-    }
-
-    loadAllImages() {
-        this.images.forEach(img => this.loadImage(img));
-    }
-
-    loadImage(img) {
-        const srcset = img.getAttribute('data-srcset');
-        if (srcset) {
-            img.srcset = srcset;
-            img.removeAttribute('data-srcset');
-        }
-    }
-}
-
-// Modern event listener helper
-const EventManager = {
-    listeners: new Map(),
-
-    on(element, event, handler, options = {}) {
-        element.addEventListener(event, handler, options);
-        
-        if (!this.listeners.has(element)) {
-            this.listeners.set(element, new Map());
-        }
-        
-        const elementListeners = this.listeners.get(element);
-        if (!elementListeners.has(event)) {
-            elementListeners.set(event, []);
-        }
-        
-        elementListeners.get(event).push({ handler, options });
-    },
-
-    off(element, event, handler) {
-        const elementListeners = this.listeners.get(element);
-        if (elementListeners && elementListeners.has(event)) {
-            const handlers = elementListeners.get(event);
-            const index = handlers.findIndex(h => h.handler === handler);
-            if (index > -1) {
-                element.removeEventListener(event, handler, handlers[index].options);
-                handlers.splice(index, 1);
+    addTouchStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .touch-element {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
             }
-        }
-    },
-
-    once(element, event, handler) {
-        const onceHandler = (...args) => {
-            handler(...args);
-            this.off(element, event, onceHandler);
-        };
-        this.on(element, event, onceHandler);
+            
+            /* Table touch improvements */
+            .table-container {
+                -webkit-overflow-scrolling: touch;
+                touch-action: manipulation;
+            }
+        `;
+        document.head.appendChild(style);
     }
-};
 
-// Performans için throttle helper
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
+    preventZoom() {
+        let lastTouchEnd = 0;
+        
+        document.addEventListener('touchend', (event) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, { passive: false });
+    }
 }
 
-// DOM ready helper
-function domReady(handler) {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', handler);
+// Initialize touch optimizations
+new TouchOptimizer();
+
+// Breakpoint change listener
+window.addEventListener('resize', () => {
+    if (breakpoints.isMobile()) {
+        document.body.classList.add('mobile-view');
+        initMobileTableFix(); // Yeniden boyutlandırmada tabloları güncelle
     } else {
-        handler();
+        document.body.classList.remove('mobile-view');
     }
-}
-
-// Kullanım
-domReady(() => {
-    new ResponsiveLoader();
-    // Diğer başlatma işlemleri...
 });
+
+// Initial check
+if (breakpoints.isMobile()) {
+    document.body.classList.add('mobile-view');
+    // Sayfa yüklendiğinde tabloları düzelt
+    setTimeout(initMobileTableFix, 100);
+}
