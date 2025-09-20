@@ -25,7 +25,11 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="preload" href="assets/css/main.css" as="style" onload="this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<!-- Navbar'ın her zaman görünür olması için basit çözüm -->
@@ -119,7 +123,7 @@
 			</div>
 		</div>
 
-		<script src="assets/js/optimized.js"></script>
+		<script src="assets/js/optimized.js" defer ></script>
 		
 		<!-- Navbar'ın her zaman görünür kalmasını sağlayacak basit script -->
 		<script>
