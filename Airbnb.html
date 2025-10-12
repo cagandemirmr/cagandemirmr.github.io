@@ -1,6 +1,92 @@
 <!DOCTYPE HTML>
 <html lang="tr">
 	<head>
+		<script type="application/ld+json">
+		{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+			"@type": "Dataset",
+			"name": "İstanbul Airbnb Veri Seti",
+			"description": "İstanbul'daki Airbnb listelerine ait anonimleştirilmiş veri seti",
+			"keywords": "Airbnb verisi, konaklama verisi, İstanbul turizm, kiralık ev verisi",
+			"creator": {
+				"@type": "Person",
+				"name": "Çağan Demir"
+			},
+			"spatialCoverage": {
+				"@type": "Place",
+				"name": "İstanbul"
+			},
+			"variableMeasured": [
+				{
+				"@type": "PropertyValue",
+				"name": "Günlük Kira Fiyatı",
+				"unitText": "USD"
+				},
+				{
+				"@type": "PropertyValue",
+				"name": "Kullanıcı Puanı",
+				"minValue": "0",
+				"maxValue": "5"
+				},
+				{
+				"@type": "PropertyValue",
+				"name": "Oda Sayısı",
+				"unitText": "oda"
+				},
+				{
+				"@type": "PropertyValue",
+				"name": "Superhost Durumu",
+				"unitText": "boolean"
+				}
+			]
+			},
+			{
+			"@type": "Analysis",
+			"name": "İstanbul İlçe Performans Karşılaştırması",
+			"description": "39 ilçenin Airbnb performansının kapsamlı karşılaştırması",
+			"about": [
+				{
+				"@type": "Place",
+				"name": "Beyoğlu",
+				"description": "En fazla evin listelendiği ilçe"
+				},
+				{
+				"@type": "Place",
+				"name": "Fatih",
+				"description": "Yüksek fiyat ve geniş konut çeşitliliği"
+				},
+				{
+				"@type": "Place",
+				"name": "Şişli",
+				"description": "Yoğun listelemeye sahip merkezi ilçe"
+				},
+				{
+				"@type": "Place",
+				"name": "Kadıköy",
+				"description": "Anadolu yakasında öne çıkan ilçe"
+				},
+				{
+				"@type": "Place",
+				"name": "Beşiktaş",
+				"description": "Yüksek talep gören merkezi ilçe"
+				},
+				{
+				"@type": "Place",
+				"name": "Sarıyer",
+				"description": "Fiyat/performans dengesi en iyi ilçe"
+				},
+				{
+				"@type": "Place",
+				"name": "Adalar",
+				"description": "Yüksek fiyat ve puan performansı"
+				}
+			]
+			}
+		]
+		}
+		</script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR71LGTX4Z"></script>
 		<script>
