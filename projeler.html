@@ -1,7 +1,57 @@
-<!DOCTYPE HTML>
-<html lang="tr">
-	<head>
-		<script type="application/ld+json">
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Çağan Demir - Veri Analisti Portfolyo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Merriweather:ital,wght@0,300;0,400;1,300&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e242a", // The dark charcoal brand color
+              secondary: "#4a5568",
+              "background-light": "#f3f4f6", // Light grey background for body
+              "background-dark": "#111827", // Very dark grey/almost black for body
+              "card-light": "#ffffff",
+              "card-dark": "#1f2937",
+            },
+            fontFamily: {
+              display: ['Montserrat', 'sans-serif'],
+              body: ['Merriweather', 'serif'],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+
+<script>
+        // Check for saved user preference, if any, on load of the website
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+</head>
+<script type="application/ld+json">
 		{
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
@@ -110,7 +160,7 @@
 		"genre": ["Veri Bilimi", "Yapay Zeka", "Makine Öğrenmesi", "Python Programlama"]
 		}
 		</script>
-		<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR71LGTX4Z"></script>
 		<script>
   		window.dataLayer = window.dataLayer || [];
@@ -119,245 +169,191 @@
 
   		gtag('config', 'G-XR71LGTX4Z');
 		</script>
-		<title>Çağan Demir Veri Analisti</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Veri analisti ve veri bilimcisi Çağan Demir'in projelerine ve vaka çalışmalarına göz atın. Python, yapay zeka ve makine öğrenmesi alanındaki çalışmalarımı keşfedin.">
-		<meta name="keywords" content="veri analisti, veri bilimi, yapay zeka, makine öğrenmesi, Python, veri analizi projeleri, portföy, vaka çalışması, Google Play yorum analizi, rakip analizi, analiz, veri, proje, Çağan Demir">
-		<meta name="author" content="Çağan Demir">
-		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-		<link rel="preload" href="assets/css/main.css?v=1" as="style" onload="this.rel='stylesheet'">
-		<noscript><link rel="stylesheet" href="assets/css/main.css?v=1"></noscript>
-		<link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.cagandemirmr.com/sitemap.xml">
-		<link rel="alternate" hreflang="en" href="https://en.cagandemirmr.com/projects.html" />
-		<link rel="canonical" href="https://www.cagandemirmr.com/" />
-		<link rel="icon" href="/favicon.webp" type="image/webp">
-		
-		<!-- Navbar stilleri -->
-		<style>
-			/* Navbar'ın her zaman görünür olmasını sağla */
-			#nav {
-				display: flex !important;
-				opacity: 1 !important;
-				visibility: visible !important;
-				transform: none !important;
-			}
-			
-			/* Mobil cihazlarda navigasyon öğelerinin tıklanabilir alanını büyüt */
-			@media screen and (max-width: 768px) {
-				#nav {
-					flex-direction: column;
-					align-items: center;
-				}
-				
-				#nav .links,
-				#nav .icons {
-					display: flex;
-					flex-wrap: wrap;
-					justify-content: center;
-				}
-				
-				#nav .links li,
-				#nav .icons li {
-					margin: 5px;
-				}
-				
-				#nav .links li a,
-				#nav .icons li a {
-					padding: 12px 15px;
-					min-height: 44px;
-					display: flex;
-					align-items: center;
-				}
-			}
-		</style>
-		
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css?v=1" /></noscript>
-	</head>
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Projeler <br />
-						</h1>
-						<p>Çeşitli sektörler için hazırladığım vaka çalımalarımı burada bulabilirsiniz.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Çağan Demir</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li ><a href="index.html">Anasayfa</a></li>
-							<li class="active"><a href="projeler.html">Projeler</a></li>
-							<li><a href="apps.html">Uygulamalar</a></li>
-                            <li><a href="hakkımda.html">Hakkında</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/cagan-demir/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/cagandemirmr" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
+<meta name="description" content="Veri analisti ve veri bilimcisi Çağan Demir'in projelerine ve vaka çalışmalarına göz atın. Python, yapay zeka ve makine öğrenmesi alanındaki çalışmalarımı keşfedin.">
+<meta name="keywords" content="veri analisti, veri bilimi, yapay zeka, makine öğrenmesi, Python, veri analizi projeleri, portföy, vaka çalışması, Google Play yorum analizi, rakip analizi, analiz, veri, proje, Çağan Demir">
+<meta name="author" content="Çağan Demir">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.cagandemirmr.com/sitemap.xml">
+<link rel="alternate" hreflang="en" href="https://en.cagandemirmr.com/projects.html" />
+<link rel="canonical" href="https://www.cagandemirmr.com/" />
 
 
-						<!-- Posts -->
-							<section class="posts" >
-								<article style="background-color: rgb(160, 172, 183);">
-                                    <h2>Dijital Medya </h2>
-                                    <h2><a href="nlpdijitalmedyaprojesi.html">Yorum Analizi</a></h2>
-									
-									<a href="nlpdijitalmedyaprojesi.html" class="image fit"><img src="images\yorum analizi.webp?v=1" alt="" loading="lazy"/></a>
-									<p>Bu proje, Google Play kullanıcı yorumlarını analiz ederek uygulamaların güçlü ve zayıf yönlerini ortaya çıkarıyor. Duygu analizi ve kullanıcı davranışlarıyla, geliştiricilere veri odaklı kararlar aldıracak değerli içgörüler sunuyor.             </p>
-									<ul class="actions special">
-										<li><a href="nlpdijitalmedyaprojesi.html" class="button">Projeyi Görüntüle</a></li>
-									</ul>
-								</article >
-								<article style="background-color: rgb(160, 172, 183);">
-                                    <h2>Dijital Medya </h2>
-                                    <h2><a href="rakipanalizi.html">Rakip Analizi</a></h2>
-									
-									<a href="rakipanalizi.html" class="image fit"><img src="images\rakip analizi.webp?v=1" alt="" loading="lazy"/></a>
-									<p>Dijital dünyada öne çıkmak isteyenler için rakiplerin sosyal medya stratejileri kritik.
-									Bu analizde, üç önde gelen rakibin Instagram, X ve YouTube içerikleri incelendi.
-									Hangi paylaşımlar ve zamanlamalar daha çok etkileşim getirdi ortaya kondu.
-									</p>
-									<ul class="actions special">
-										<li><a href="rakipanalizi.html" class="button">Projeyi Görüntüle</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2>E-Ticaret</h2>
-										<h2><a href="Eticaretvaka.html">Tünelden Reklam Analizi</a></h2>
-									</header>
-									<a href="Eticaretvaka.html" class="image fit"><img src="images\Markethunisi.webp?v=1" alt="" loading="lazy"/></a>
-									<p>Bir e-ticaret işletmesinin verileri, müşterilerin kim olduğunu ve hangi stratejilerin büyümeyi hızlandırdığını anlatıyor. Bu çalışma; veri temizliğinden müşteri yaşam boyu değerine kadar tüm adımları inceleyerek iş değeri yaratan içgörüler sunuyor.
-									</p>
-									<ul class="actions special">
-										<li><a href="Eticaretvaka.html" class="button">Projeyi Görüntüle</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2>E-Ticaret</h2>
-										<h2><a href="eticaretanalizprojesi.html">Vaka Çalışması</a></h2>
-									</header>
-									<a href="eticaretanalizprojesi.html" class="image fit"><img src="images\eticaretgorseli2.webp?v=1" alt="" loading="lazy"/></a>
-									<p>Bu vaka çalışması, bir e-ticaret sitesinin görünmeyen fırsatlarını ortaya çıkarıyor.
-									Kullanıcı davranışları ve mobil deneyimlerdeki gizli ipuçları keşfedildi.
-									Hangi zaman dilimlerinde alışverişin arttığını ve reklamların nasıl etkili olduğunu inceledik.
-									Analizler sonucunda stratejiler geliştirdik.
-									</p>
-									<ul class="actions special">
-										<li><a href="eticaretanalizprojesi.html" class="button">Projeyi Görüntüle</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2>Emlak</h2>
-										<h2><a href="Airbnb.html">Airbnb Getiri Analizi</a></h2>
-									</header>
-									<a href="Airbnb.html" class="image fit"><img src="images\Airbnb_kapak.webp?v=1" alt="" loading="lazy"/></a>
-									<p>Bu proje, İstanbul’daki Airbnb evlerini emlakçı gözüyle inceleyerek hangi bölgelerin öne çıktığını, fiyatların nasıl şekillendiğini ve potansiyel fırsatları keşfetmeyi amaçlıyor.</p>
-									<ul class="actions special">
-										<li><a href="Airbnb.html" class="button">Projeyi Görüntüle</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2>Emlak</h2>
-										<h2><a href="antalyakiraprojesi.html">Kira Analizi</a></h2>
-									</header>
-									<a href="antalyakiraprojesi.html" class="image fit"><img src="images\antalyakiratahmini.webp?v=1" alt="" loading="lazy"/></a>
-									<p>Antalya Muratpaşa’daki kiralık daire pazarında gizli fırsatlar keşfedildi.
-									Hangi mahalleler en yüksek kira getirisini sunuyor ve neden öne çıkıyor?
-									Rakım, manzara ve daire özelliklerinin kira üzerindeki etkilerini inceledik.
-									Yatırımcılar ve emlak sahipleri için kritik ipuçları ortaya kondu.</p>
-									<ul class="actions special">
-										<li><a href="antalyakiraprojesi.html" class="button">Projeyi Görüntüle</a></li>
-									</ul>
-								<article>
-								
-								
-								
-							</section>
+<body class="bg-primary text-gray-800 font-display antialiased flex flex-col items-center min-h-screen">
+<button class="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white transition-all shadow-lg border border-white/20" onclick="toggleDarkMode()">
+<span class="material-icons-outlined block dark:hidden">dark_mode</span>
+<span class="material-icons-outlined hidden dark:block">light_mode</span>
+</button>
+<header class="w-full text-white pt-20 pb-12 text-center relative z-10 px-4">
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-widest mb-4">ÇAĞAN DEMİR</h1>
+<p class="text-lg md:text-xl font-light text-gray-300 italic font-body mb-8">
+            SQL, PowerBI, Tableau ve Python da uzman Veri Analisti
+        </p>
+<div class="flex justify-center mb-12">
+<div class="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center">
+<span class="w-12 h-12 rounded-full border border-white/60"></span>
+</div>
+</div>
+</header>
+<div class="w-full max-w-6xl bg-card-light dark:bg-card-dark shadow-2xl transition-colors duration-300">
+<nav class="sticky top-0 z-40 bg-gray-700 text-white dark:bg-gray-900 border-b border-gray-600 dark:border-gray-800">
+<div class="flex flex-wrap justify-center md:justify-start">
+<a class="block py-4 px-6 text-sm font-semibold font-display uppercase tracking-widest text-gray-400 hover:text-white transition-colors duration-300" href="index.html">Anasayfa</a>
+<a class="px-6 py-4 text-xs font-bold uppercase tracking-widest bg-white text-gray-900 dark:bg-gray-800 dark:text-white" href="Projeler.html">Projeler</a>
+<a class="px-6 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-600 transition-colors" href="Uygulamalar.html">Uygulamalar</a>
+<a class="px-6 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-600 transition-colors" href="Hakkımda.html">Hakkımda</a>
+</div>
+</nav>
+<main class="px-6 py-16 md:px-16 md:py-20">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6 uppercase tracking-wider">Projeler</h2>
+<div class="w-24 h-1 bg-gray-300 mx-auto mb-6"></div>
+<p class="text-gray-600 dark:text-gray-300 font-body italic text-lg">
+                    Çeşitli sektörler için hazırladığım vaka çalışmalarını burada bulabilirsiniz.
+                </p>
+<div class="flex justify-center mt-6">
+<span class="w-12 h-12 rounded-full border border-gray-400 dark:border-gray-600"></span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+<article class="flex flex-col group">
+<div class="mb-2 text-center">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-2">DİJİTAL MEDYA</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">YORUM ANALİZİ</h4>
+</div>
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8 relative">
+<img alt="Abstract colorful face representing user sentiments" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn-k_ZXjDHjaVJhXxgWivH3dcA5-RGRAue0X7SXML_SYVhhdlGfhZOw8pkObXN6kkyAH3j3q1EPBxJyEhT6VzP6zT58ia4SISfYgx5py-nXRLVI4qYHvterc3qSmhN3-d_lw6q4R4rULpqfZNr5RWYNuKOn5QMqloCE7XP1XsDWEph4RSJooinQxyBtEe8doKDGJ9E5KmIR88_Z4s0FslnTrVZarkzMsXGmBbZcCgQjJmbZWB34iJsk00ZnVcSN9uLHuDqNc0gmg"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+</div>
+<p class="text-gray-600 dark:text-gray-300 font-body leading-relaxed mb-8 text-center text-sm md:text-base">
+                        Bu proje, Google Play kullanıcı yorumlarını analiz ederek uygulamaların güçlü ve zayıf yönlerini ortaya çıkarıyor. Duygu analizi ve kullanıcı davranışlarıyla, geliştiricilere veri odaklı kararlar aldıracak değerli içgörüler sunuyor.
+                    </p>
+<div class="mt-auto text-center">
+<a class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 rounded-sm" href="dijitalmedyayorumanalizi.html">
+                        Projeleri Görüntüleyin
+                    </a>
 
-					</div>
+</div>
+</article>
+<article class="flex flex-col group">
+<div class="mb-2 text-center">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-2">DİJİTAL MEDYA</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">RAKİP ANALİZİ</h4>
+</div>
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8 relative">
+<img alt="Digital eye scanning for data" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW-D2-8g1oS9fpx38NI6pOrz_Tg56gqo9GbU2Rc4v1tABtDs5ZinYBFKIiPvrcH12ECLrH0Ed-dSCCfrOFJboA_Dcxj1UedAx8449ZENLi6zYRHGxBVFa2AVNWCJq_SSf_dFQsEPNG7F15hK6w6FRhZpy0LAp2b3kgVH-cTkTlkb8b12Net-KVnC1C79KQAbsG6FwYEImOVfOz3XUgCUkRqrAI11bUxhpq53HFPlRgIs_ag-_NiN4ygngFQ1DJ-0LsVlolWCB9vg"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+</div>
+<p class="text-gray-600 dark:text-gray-300 font-body leading-relaxed mb-8 text-center text-sm md:text-base">
+                        Dijital dünyada öne çıkmak isteyenler için rakiplerin sosyal medya stratejileri kritik. Bu analizde, üç önde gelen rakibin Instagram, X ve YouTube içerikleri incelendi. Hangi paylaşımlar ve zamanlamalar daha çok etkileşim getirdi ortaya kondu.
+                    </p>
+<div class="mt-auto text-center">
+<a class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 rounded-sm" href="rakipanalizi.html">
+                        Projeleri Görüntüleyin
+                    </a>
+</div>
+</article>
+<article class="flex flex-col group border-t border-gray-200 dark:border-gray-700 pt-16 md:pt-20">
+<div class="mb-2 text-center">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-2">E-TİCARET</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">TÜNELDEN REKLAM ANALİZİ</h4>
+</div>
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8 relative bg-gray-100 dark:bg-gray-800">
+<img alt="Marketing funnel visualization graphic" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcdyLO7rmSOS1MDN5oWBOskJaLnjUxBlc7fAzqsnYlNmwnHkqJPx-igr9AmJskEzJt0U54odZFS2DEFGMKEsfwFmtX6H-_yAoCNjaiXJZ4iherDDsMJNrumCRRTzRV3gFj12UW6oVy1siaBCdhXfjTvRgtf0Q4KsVWMt58Ttco36vwru2lM8sdrc1PsW4Rzm5B9ksW6fx2tHeh9AdJ1XWA0zN97MiVjw5mZTeRT1J7Y1kP5SgreubA6l9M9CQDKy4NslzarGEg3w"/>
+</div>
+<p class="text-gray-600 dark:text-gray-300 font-body leading-relaxed mb-8 text-center text-sm md:text-base">
+                        Bir e-ticaret işletmesinin verileri, müşterilerin kim olduğunu ve hangi stratejilerin büyümeyi hızlandırdığını anlatıyor. Bu çalışma; veri temizliğinden müşteri yaşam boyu değerine kadar tüm adımları inceleyerek iş değeri yaratan içgörüler sunuyor.
+                    </p>
+<div class="mt-auto text-center">
+<a class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 rounded-sm" href="ecommerceanaliz.html">
+                        Projeleri Görüntüleyin
+                    </a>
+</div>
+</article>
+<article class="flex flex-col group border-t border-gray-200 dark:border-gray-700 pt-16 md:pt-20">
+<div class="mb-2 text-center">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-2">E-TİCARET</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">VAKA ÇALIŞMASI</h4>
+</div>
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8 relative">
+<img alt="Shopping cart in a futuristic retail environment" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7kNZsZNwmAUofCCuC4JjPcPsCZGP3MxOfP1X4IFx4K9APGyg3LFPh8izAHY4NNf9Q26YRRR4n2k_hVOnZLKTY1UI_U_ISlkQ0s83_2olEguAtZf0eraX22SR4jjfuZukii8zKbfLRjQ-TLNHjBawv9U2fQQOywgRQzfPuiv6BQPiGVHzr0E1LnMNc--aZ8cWUdF8MSyG0K7m_mmsu6bzFi78rR94rE3s_1ttjpyMZh5bCVIgvQjysee6DQf_1xw5DdKJcmNr_-A"/>
+</div>
+<p class="text-gray-600 dark:text-gray-300 font-body leading-relaxed mb-8 text-center text-sm md:text-base">
+                        Bu vaka çalışması, bir e-ticaret sitesinin görünmeyen fırsatlarını ortaya çıkarıyor. Kullanıcı davranışları ve mobil deneyimlerdeki gizli ipuçları keşfedildi. Hangi zaman dilimlerinde alışverişin arttığını ve reklamların nasıl etkili olduğunu inceledik.
+                    </p>
+<div class="mt-auto text-center">
+<a class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 rounded-sm" href="crmanalizi.html">
+                        Projeleri Görüntüleyin
+                    </a>
+</div>
+</article>
+<article class="flex flex-col group border-t border-gray-200 dark:border-gray-700 pt-16 md:pt-20">
+<div class="mb-2 text-center">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-2">EMLAK</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">AİRBNB GETİRİ ANALİZİ</h4>
+</div>
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8 relative">
+<img alt="Stylized Airbnb logo and cityscape" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4krpUKUJmUBbaq8u4xuryO1OgDPo-YrLLEUlEhCNOEALUcNaCXi3IBtlIctCb_4ylNZ8GYQo9V8kmEkFfXT0bG7IR8bxXwlhTOZbsD_MhC6y5Yapm4MpaI2vPrwSfZWUo9o-3F0I8PpPCtlR9zIzuE0Kpz8IFIOp8uM2nTvxzjmNIBBxDmM2ljeLLmRsRweagDTXxuUJrLMQNF0cR6stfB4yAN38yeEF32kFVp4I7GXZKt_KDxMdRnFjuD9yiGcea7f3qVtK4hw"/>
+</div>
+<p class="text-gray-600 dark:text-gray-300 font-body leading-relaxed mb-8 text-center text-sm md:text-base">
+                        Bu proje, İstanbul'daki Airbnb evlerini emlakçı gözüyle inceleyerek hangi bölgelerin öne çıktığını, fiyatların nasıl şekillendiğini ve potansiyel fırsatları keşfetmeyi amaçlıyor.
+                    </p>
+<div class="mt-auto text-center">
+<a class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 rounded-sm" href="airbnbanaliz.html">
+                        Projeleri Görüntüleyin
+                    </a>
+</div>
+</article>
+<article class="flex flex-col group border-t border-gray-200 dark:border-gray-700 pt-16 md:pt-20">
+<div class="mb-2 text-center">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-2">EMLAK</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">KİRA ANALİZİ</h4>
+</div>
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8 relative">
+<img alt="Beautiful illuminated house at night" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYVFaW7NW9qfe_YiaKMEB6wfuuibGIDlDZ48PZ33I7FcSpWe1a2WsFtC_8tXes3z38qLVLwJhf1JKRqnIwjJHid6Uu7Thfmg5m8cwtbKlHIseKmqRvlKxqGHnYp-4rKTCK3V6gv55VmKpcup9SFO7OjzhqGKIPeJc8DVzy9-lbuWwa-TxYgJNW1LM8GTZcJ4iEYPMFbw3LFhSWJM-QqnmspeWN032oXMoat0hWBGlgj24Rq1HK6JRokOV_FJAkL000TPbMEL_ezw"/>
+</div>
+<p class="text-gray-600 dark:text-gray-300 font-body leading-relaxed mb-8 text-center text-sm md:text-base">
+                        Antalya Muratpaşa'daki kiralık daire pazarında gizli fırsatlar keşfedildi. Hangi mahalleler en yüksek kira getirisini sunuyor ve neden öne çıkıyor? Rakım, manzara ve daire özelliklerinin kira üzerindeki etkilerini inceledik.
+                    </p>
+<div class="mt-auto text-center">
+<a class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 rounded-sm" href="emlakanalizi.html">
+                        Projeleri Görüntüleyin
+                    </a>
+</div>
+</article>
+</div>
+</main>
+<footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-6 py-12 md:px-16">
+<div class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start pb-8 border-b border-gray-200 dark:border-gray-700">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Adres</div>
+<div class="md:col-span-3 text-sm text-gray-600 dark:text-gray-300 font-body">Urla, İzmir</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start pb-8 border-b border-gray-200 dark:border-gray-700">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Telefon</div>
+<div class="md:col-span-3 text-sm text-gray-600 dark:text-gray-300 font-body hover:text-blue-600 cursor-pointer transition-colors">(543) 513-1060</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start pb-8 border-b border-gray-200 dark:border-gray-700">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Email</div>
+<div class="md:col-span-3 text-sm text-gray-600 dark:text-gray-300 font-body hover:text-blue-600 cursor-pointer transition-colors">cagandemirmr@gmail.com</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Sosyal Medya</div>
+<div class="md:col-span-3 flex space-x-6">
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" href="#">
+<i class="material-icons-outlined text-xl">share</i>
+</a>
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" href="#">
+<i class="material-icons-outlined text-xl">code</i>
+</a>
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" href="#">
+<i class="material-icons-outlined text-xl">work</i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="py-12 text-center text-xs text-gray-500 font-bold tracking-widest uppercase">
+        © Untitled | Design: HTML5 UP
+    </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Adres</h3>
-								<p>Urla, İzmir</p>
-							</section>
-							<section>
-								<h3>Telefon</h3>
-								<p><a href="#">(543) 513-1060</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">cagandemirmr@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Sosyal Medya</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/cagan-demir/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/cagandemirmr" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/optimized.js?v=1" defer></script>
-			
-			<!-- Navbar görünürlük scripti -->
-			<script>
-				// Sayfa boyutu değiştiğinde navbar'ın görünür kalmasını sağla
-				window.addEventListener('resize', function() {
-					var nav = document.getElementById('nav');
-					if (nav) {
-						nav.style.display = 'flex';
-						nav.style.opacity = '1';
-						nav.style.visibility = 'visible';
-					}
-				});
-				
-				// Sayfa yüklendiğinde de aynı işlemi yap
-				window.addEventListener('load', function() {
-					var nav = document.getElementById('nav');
-					if (nav) {
-						nav.style.display = 'flex';
-						nav.style.opacity = '1';
-						nav.style.visibility = 'visible';
-					}
-				});
-			</script>
-
-	</body>
-
-</html>
+</body></html>

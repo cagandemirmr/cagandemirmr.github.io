@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Çağan Demir – Uygulamalar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#1e242a",
+        "card-dark": "#1f2937",
+      },
+      fontFamily: {
+        display: ['Montserrat', 'sans-serif'],
+        body: ['Merriweather', 'serif'],
+      },
+    },
+  },
+};
+</script>
+
+<script>
+if (localStorage.theme === 'dark' ||
+ (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+function toggleDarkMode() {
+  document.documentElement.classList.toggle('dark');
+  localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+}
+</script>
+</head>
+<script type="application/ld+json">
+{
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		"name": "Web Uygulamaları - Yapay Zeka Destekli Uygulama Koleksiyonu",
+		"description": "Makine öğrenmesi ve derin öğrenme algoritmaları kullanılarak geliştirilmiş çeşitli web uygulamaları. Görsel analizden yapay zeka destekli araçlara kadar farklı ihtiyaçlara uygun ücretsiz çözümler.",
+		"url": "https://www.cagandemirmr.com/apps.html",
+		"mainEntity": {
+			"@type": "ItemList",
+			"numberOfItems": 2,
+			"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+				"@type": "WebApplication",
+				"name": "Renk Analizi Uygulaması",
+				"description": "Kar amacı gütmeyen, tez çalışmaları, sanatsal projeler ve ticari içerikler için renk analizi süreçlerini kolaylaştıran ücretsiz web uygulaması.",
+				"url": "https://renk-paleti-bulma-aplikasyonu.onrender.com/",
+				"applicationCategory": "DesignApplication",
+				"operatingSystem": "Web Browser",
+				"browserRequirements": "Modern web tarayıcı",
+				"permissions": "Görsel yükleme izni",
+				"featureList": [
+					"Renk paleti analizi",
+					"Görsel yükleme",
+					"Otomatik renk çıkarma",
+					"Hex kodları gösterimi"
+				],
+				"softwareVersion": "1.0",
+				"softwareHelp": "https://www.cagandemirmr.com/apps.html",
+				"author": {
+					"@type": "Person",
+					"name": "Çağan Demir",
+					"url": "https://www.cagandemirmr.com"
+				},
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD",
+					"availability": "https://schema.org/InStock"
+				},
+				"applicationSubCategory": "GraphicDesignTool",
+				"screenshot": "https://www.cagandemirmr.com/images/renk_analizcisi.webp",
+				"keywords": "renk analizi, renk paleti, görsel analiz, tasarım aracı, ücretsiz uygulama"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"item": {
+				"@type": "WebApplication",
+				"name": "İkinci El Araba Tahmin Uygulaması",
+				"description": "Kullanıcıların araçlarına ait marka, model, kasa tipi, kilometre gibi bilgileri girerek aracın ikinci el piyasasındaki yaklaşık dolar bazlı değerini tahmin eden yapay zeka destekli web uygulaması.",
+				"url": "https://huggingface.co/spaces/Cgndmr/ikincieltahmin",
+				"applicationCategory": "BusinessApplication",
+				"operatingSystem": "Web Browser",
+				"browserRequirements": "Modern web tarayıcı",
+				"permissions": "Form veri girişi",
+				"featureList": [
+					"Araç değer tahmini",
+					"Marka-model seçimi",
+					"Kasa tipi analizi",
+					"Kilometre değerlendirmesi",
+					"Dolar bazlı fiyat tahmini"
+				],
+				"softwareVersion": "1.0",
+				"softwareHelp": "https://www.cagandemirmr.com/apps.html",
+				"author": {
+					"@type": "Person",
+					"name": "Çağan Demir",
+					"url": "https://www.cagandemirmr.com"
+				},
+				"publisher": {
+					"@type": "Organization",
+					"name": "Hugging Face",
+					"url": "https://huggingface.co"
+				},
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD",
+					"availability": "https://schema.org/InStock"
+				},
+				"applicationSubCategory": "FinancialAnalysisTool",
+				"screenshot": "https://www.cagandemirmr.com/images/luxury_car.webp",
+				"keywords": "ikinci el araba, araç değerleme, fiyat tahmini, makine öğrenmesi, yapay zeka"
+				}
+			}
+			]
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Çağan Demir",
+			"jobTitle": "Veri Analisti ve Veri Bilimci",
+			"url": "https://www.cagandemirmr.com"
+		},
+		"publisher": {
+			"@type": "Person",
+			"name": "Çağan Demir"
+		},
+		"about": {
+			"@type": "Thing",
+			"name": "Yapay Zeka Web Uygulamaları"
+		},
+		"genre": ["Makine Öğrenmesi", "Derin Öğrenme", "Yapay Zeka", "Python Programlama"]
+		}
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR71LGTX4Z"></script>
+		<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'G-XR71LGTX4Z');
+		</script>
+  <meta name="description" content="Makine öğrenmesi ve derin öğrenme algoritmaları kullanılarak geliştirilmiş çeşitli web uygulamaları. Görsel analizden yapay zeka destekli araçlara kadar farklı ihtiyaçlara uygun ücretsiz çözümler.">
+  <meta name="keywords" content="web uygulamaları, yapay zeka, makine öğrenmesi, derin öğrenme, renk analizi, ücretsiz araçlar, AI uygulamaları, Python projeleri, proje galerisi">
+  <meta name="author" content="Çağan Demir">
+  <link rel="canonical" href="https://cagandemirmr.com/apps.html" />
+
+<body class="bg-primary text-gray-800 font-display antialiased flex flex-col items-center min-h-screen">
+
+<button onclick="toggleDarkMode()"
+class="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/20">
+<span class="material-icons-outlined dark:hidden">dark_mode</span>
+<span class="material-icons-outlined hidden dark:block">light_mode</span>
+</button>
+
+<!-- HEADER -->
+<header class="w-full text-white pt-20 pb-12 text-center">
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-widest mb-4">
+ÇAĞAN DEMİR
+</h1>
+<p class="text-lg md:text-xl font-light text-gray-300 italic font-body">
+Makine Öğrenmesi ve Veri Odaklı Web Uygulamaları
+</p>
+</header>
+
+<!-- CONTAINER -->
+<div class="w-full max-w-6xl bg-white dark:bg-card-dark shadow-2xl transition-colors">
+
+<!-- NAV -->
+<nav class="sticky top-0 z-40 bg-gray-700 dark:bg-gray-900 border-b border-gray-600 dark:border-gray-800">
+<div class="flex flex-wrap justify-center md:justify-start">
+<a href="index.html" class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white">Anasayfa</a>
+<a href="Projeler.html" class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white">Projeler</a>
+<a href="Uygulamalar.html" class="px-6 py-4 text-xs font-bold uppercase tracking-widest bg-white text-gray-900 dark:bg-gray-800 dark:text-white">
+Uygulamalar
+</a>
+<a href="Hakkımda.html" class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white">Hakkımda</a>
+</div>
+</nav>
+
+<!-- MAIN -->
+<main class="px-6 py-16 md:px-16 md:py-20">
+
+<!-- TITLE -->
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold uppercase tracking-wider mb-6 text-gray-900 dark:text-white">
+Uygulamalar
+</h2>
+<div class="w-24 h-1 bg-gray-300 mx-auto mb-6"></div>
+<p class="text-gray-600 dark:text-gray-300 font-body italic text-lg">
+Makine öğrenmesi tabanlı interaktif web uygulamaları
+</p>
+</div>
+
+<!-- GRID -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+
+<!-- CARD -->
+<article class="flex flex-col group">
+<div class="text-center mb-6">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 uppercase mb-2">
+WEB APP
+</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition">
+RENK ANALİZİ
+</h4>
+</div>
+
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmP_9APWwHZoNv7dYOSjc-ImhJ9YVSDvttkOZNkaYm7tmnQCfXfCUenL40WGpZyaHhREicgJNzunx6Mk265Z7Italvc7sxfkl1hJo9VUKW4b9_EYSm_Dtw93_qng5NlLUS2mBH0Zzh7buH2Oi3p2hzgfBbDjg71Njpgr4oujUq9hoQpyFW_-sfwN1PnH7TrzEv05BoA2gmKUoQ7QcXVs9ny9QkF-tYQWBuraRvf5MfGCRVrFTYP9XNl-6kMqe5CSuQ_AMPT1M_gg">
+</div>
+
+<p class="text-gray-600 dark:text-gray-300 font-body text-center mb-8">
+Tez, sanatsal ve ticari projeler için geliştirilen ücretsiz renk analizi uygulaması.
+</p>
+
+<div class="text-center mt-auto">
+<a href="#"
+class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition">
+Uygulamaya Git
+</a>
+</div>
+</article>
+
+<!-- CARD -->
+<article class="flex flex-col group">
+<div class="text-center mb-6">
+<h3 class="text-sm font-bold tracking-[0.2em] text-gray-500 uppercase mb-2">
+WEB APP
+</h3>
+<h4 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition">
+ARAÇ DEĞER TAHMİNİ
+</h4>
+</div>
+
+<div class="aspect-video overflow-hidden rounded-lg shadow-md mb-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ9rRCCd9d6E12fQGZPAFS7v3n1JgbZ-J4IbjR4zmWi-2fu0C2eptJGyINiaEzgtzihejTHdHnll7hRbKSgrQlP0LG4as0tvON1BT0oHefmW17TRPT2w88pxmPfqSDv5Ud_dbCuBQ0tRVGkE7Dzje0dVwJRW_arrs6_KX9l4ngUill6yFqjnSV-KOTegSdoyTln9Msjed7ToMwFetPF18UxdqV2w99qxOezyD_INAeTRVLqXm4VWEA2382iUkFx8P0f0gr5DfvdA">
+</div>
+
+<p class="text-gray-600 dark:text-gray-300 font-body text-center mb-8">
+Kullanıcı girdilerine göre ikinci el araç piyasa değerini tahmin eden ML tabanlı uygulama.
+</p>
+
+<div class="text-center mt-auto">
+<a href="#"
+class="inline-block px-8 py-3 border-2 border-gray-900 dark:border-white text-xs font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition">
+Uygulamaya Git
+</a>
+</div>
+</article>
+
+</div>
+</main>
+
+<!-- FOOTER (AYNI) -->
+<footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-6 py-12 md:px-16">
+<div class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start pb-8 border-b border-gray-200 dark:border-gray-700">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Adres</div>
+<div class="md:col-span-3 text-sm text-gray-600 dark:text-gray-300 font-body">Urla, İzmir</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start pb-8 border-b border-gray-200 dark:border-gray-700">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Telefon</div>
+<div class="md:col-span-3 text-sm text-gray-600 dark:text-gray-300 font-body hover:text-blue-600 cursor-pointer transition-colors">(543) 513-1060</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start pb-8 border-b border-gray-200 dark:border-gray-700">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Email</div>
+<div class="md:col-span-3 text-sm text-gray-600 dark:text-gray-300 font-body hover:text-blue-600 cursor-pointer transition-colors">cagandemirmr@gmail.com</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start">
+<div class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Sosyal Medya</div>
+<div class="md:col-span-3 flex space-x-6">
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" href="#">
+<i class="material-icons-outlined text-xl">share</i>
+</a>
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" href="#">
+<i class="material-icons-outlined text-xl">code</i>
+</a>
+<a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" href="#">
+<i class="material-icons-outlined text-xl">work</i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

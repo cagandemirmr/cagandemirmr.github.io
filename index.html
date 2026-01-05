@@ -1,7 +1,68 @@
-<!DOCTYPE HTML>
-<html lang="tr">
-	<head>
-		<script type="application/ld+json">
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Çağan Demir - Veri Analisti Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1d242a", // Dark charcoal from the original design
+                        accent: "#3b82f6", // A nice blue for accents
+                        "background-light": "#f3f4f6", // Light gray
+                        "background-dark": "#111827", // Very dark gray/black
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                        "text-light": "#1f2937",
+                        "text-dark": "#e5e7eb",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#374151",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+        }
+    </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR71LGTX4Z"></script>
+<script>
+ 		 window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'G-XR71LGTX4Z');
+</script>
+<script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "ProfilePage",
@@ -14,250 +75,240 @@
           }
         }
         </script>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR71LGTX4Z"></script>
-		<script>
- 		 window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
+<meta name="description" content="Veri analisti ve veri bilimcisi Çağan Demir'in projelerine ve vaka çalışmalarına göz atın. Python, yapay zeka ve makine öğrenmesi alanındaki çalışmalarımı keşfedin.">
+<meta name="keywords" content="veri analisti, veri bilimi, yapay zeka, makine öğrenmesi, Python, veri analizi projeleri, portföy, vaka çalışması, Google Play yorum analizi, rakip analizi, analiz, veri, proje, Çağan Demir">
+<meta name="author" content="Çağan Demir">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.cagandemirmr.com/sitemap.xml">
+<link rel="alternate" hreflang="en" href="https://en.cagandemirmr.com/" />
+<link rel="canonical" href="https://www.cagandemirmr.com/" />
 
-  		gtag('config', 'G-XR71LGTX4Z');
-		</script>
-		<title>Çağan Demir Veri Analisti</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Veri analisti ve veri bilimcisi Çağan Demir'in projelerine ve vaka çalışmalarına göz atın. Python, yapay zeka ve makine öğrenmesi alanındaki çalışmalarımı keşfedin.">
-		<meta name="keywords" content="veri analisti, veri bilimi, yapay zeka, makine öğrenmesi, Python, veri analizi projeleri, portföy, vaka çalışması, Google Play yorum analizi, rakip analizi, analiz, veri, proje, Çağan Demir">
-		<meta name="author" content="Çağan Demir">
-		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-		<link rel="preload" href="assets/css/main.css?v=1" as="style" onload="this.rel='stylesheet'">
-		<noscript><link rel="stylesheet" href="assets/css/main.css?v=1"></noscript>
-		<link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.cagandemirmr.com/sitemap.xml">
-		<link rel="alternate" hreflang="en" href="https://en.cagandemirmr.com/" />
-		<link rel="canonical" href="https://www.cagandemirmr.com/" />
-		<link rel="icon" href="/favicon.webp" type="image/webp">
-		
-		<!-- Navbar stilleri -->
-		<style>
-			
-			/* Mobil cihazlarda navigasyon öğelerinin tıklanabilir alanını büyüt */
-			@media screen and (max-width: 768px) {
-				#nav {
-					flex-direction: column;
-					align-items: center;
-				}
-				
-				#nav .links,
-				#nav .icons {
-					display: flex;
-					flex-wrap: wrap;
-					justify-content: center;
-				}
-				
-				#nav .links li,
-				#nav .icons li {
-					margin: 5px;
-				}
-				
-				#nav .links li a,
-				#nav .icons li a {
-					padding: 12px 15px;
-					min-height: 44px;
-					display: flex;
-					align-items: center;
-				}
-			}
-		</style>
-		
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<body class="bg-background-dark font-body text-text-light dark:text-text-dark">
+<nav class="sticky top-0 z-40 bg-gray-700 text-white dark:bg-gray-900 border-b border-gray-600 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex-shrink-0 flex items-center space-x-2">
+<span class="material-icons text-accent">analytics</span>
+<h1 class="font-display font-bold text-xl tracking-wider">ÇAĞAN DEMİR</h1>
+</div>
+<div class="hidden md:block">
+<div class="flex flex-wrap justify-center md:justify-start">
+<a class="px-6 py-4 text-xs font-bold uppercase tracking-widest bg-white text-gray-900 dark:bg-gray-800 dark:text-white" href="index.html">Anasayfa</a>
+<a class="px-6 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-600 transition-colors" href="Projeler.html">Projeler</a>
+<a class="px-6 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-600 transition-colors" href="Uygulamalar.html">Uygulamalar</a>
+<a class="px-6 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-600 transition-colors" href="Hakkımda.html">Hakkımda</a>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-white/10 transition focus:outline-none" id="theme-toggle">
+<span class="material-icons text-white block dark:hidden">dark_mode</span>
+<span class="material-icons text-white hidden dark:block">light_mode</span>
+</button>
+</div>
+</div>
+</nav>
+<header class="bg-primary text-white py-20 px-4 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="max-w-5xl mx-auto text-center relative z-10">
+<h1 class="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight">VERİYLE KAZANIN</h1>
+<p class="text-xl md:text-2xl text-gray-300 italic max-w-2xl mx-auto mb-10 font-light">
+                "Her adım değil, doğru adım kazandırır."
+            </p>
+<div class="flex justify-center">
+<div class="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center animate-bounce">
+<span class="material-icons text-3xl">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-8 relative z-20">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-2xl overflow-hidden mb-16 border border-border-light dark:border-border-dark transition-colors duration-300">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="h-64 lg:h-auto relative">
+<img alt="Data visualization dashboard" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPdpVoDMccaK4iciEqrDiJ9nD2a4Izn8Rq7GXqCBl2S6XpwjDG9dnGlKj8RaYjaZhpk3aciLs0YW7fY1LgnHK6o96gjGHPWs9Br1kY_D19K8yrsqwIhqE3GqDEAbqYOtXjda3606qo29Aay_BoXL7hA9-w0J8-3GR_a-BZZS1okikHPX3a4D7AWdMiS8Wbnkq2yZJLCH1YTrvjY1O2TMBNaIxoLbem7h5clQyMiNe72DYt2nm7m7vuS3VMalCOunDihUaV6F0rlA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-light dark:from-surface-dark lg:bg-gradient-to-r to-transparent"></div>
+</div>
+<div class="p-8 lg:p-12 flex flex-col justify-center">
+<h2 class="text-2xl font-bold mb-4 text-primary dark:text-white flex items-center gap-2">
+<span class="w-2 h-8 bg-accent rounded-full"></span>
+                        Değer Odaklı Yaklaşım
+                    </h2>
+<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                        Rekabetin her geçen gün arttığı günümüz dünyasında, rakiplerinizden bir adım öne geçmek için sadece sezgilere güvenmek yeterli değil. Elinizdeki verileri bir hazineye dönüştürmeniz ve doğru içgörülerle hareket etmeniz gerekiyor.
+                    </p>
+<p class="text-gray-600 dark:text-gray-300 font-medium italic border-l-4 border-accent pl-4 py-2 bg-background-light dark:bg-background-dark/50 rounded-r-lg">
+                        "Ben, bu soruların cevaplarını bulmanıza ve elinizdeki ham veriyi, sizi başarıya taşıyacak somut stratejilere dönüştürmenize yardımcı oluyorum."
+                    </p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="flex items-center mb-6">
+<div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg mr-4">
+<span class="material-icons text-blue-600 dark:text-blue-300 text-3xl">insights</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Veri Tabanlı Kararlar</h3>
+</div>
+<p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">
+                    İşletmenizin hangi alanda olursa olsun, veriler size yol gösterir. Peki, bu veriler size ne söylüyor?
+                </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-icons text-green-500 mr-3 text-sm mt-1">check_circle</span>
+<span class="text-sm text-gray-700 dark:text-gray-300"><strong>Emlak:</strong> Hangi bölgelerdeki fiyatlar artıyor? En kârlı müşteri segmentleri kimler?</span>
+</li>
+<li class="flex items-start">
+<span class="material-icons text-green-500 mr-3 text-sm mt-1">check_circle</span>
+<span class="text-sm text-gray-700 dark:text-gray-300"><strong>E-ticaret:</strong> Müşterileriniz sepetlerini neden terk ediyor? En çok hangi ürünler satıyor?</span>
+</li>
+<li class="flex items-start">
+<span class="material-icons text-green-500 mr-3 text-sm mt-1">check_circle</span>
+<span class="text-sm text-gray-700 dark:text-gray-300"><strong>Dijital Medya:</strong> Hangi içerikleriniz en çok etkileşim alıyor? Hedef kitleniz ne zaman aktif?</span>
+</li>
+<li class="flex items-start">
+<span class="material-icons text-green-500 mr-3 text-sm mt-1">check_circle</span>
+<span class="text-sm text-gray-700 dark:text-gray-300"><strong>Turizm:</strong> Popüler destinasyonlar neler? Fiyatlandırma stratejinizi nasıl optimize edebilirsiniz?</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border border-border-light dark:border-border-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="flex items-center mb-6">
+<div class="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg mr-4">
+<span class="material-icons text-purple-600 dark:text-purple-300 text-3xl">design_services</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Hizmetlerim</h3>
+</div>
+<p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">
+                    Veri analitiğinden stratejik raporlamaya kadar uçtan uca çözümler sunuyorum.
+                </p>
+<div class="space-y-6">
+<div class="group">
+<h4 class="font-bold text-gray-800 dark:text-gray-200 mb-1 group-hover:text-purple-500 transition-colors">Veri Analizi ve Raporlama</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">İşletmenizin mevcut verilerini analiz ederek, anlamlı raporlar ve görselleştirmeler hazırlıyorum.</p>
+</div>
+<div class="group">
+<h4 class="font-bold text-gray-800 dark:text-gray-200 mb-1 group-hover:text-purple-500 transition-colors">Pazar ve Rakip Analizi</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Sektörünüzdeki trendleri ve rakiplerinizin stratejilerini inceleyerek rekabet avantajı sağlamanıza destek oluyorum.</p>
+</div>
+<div class="group">
+<h4 class="font-bold text-gray-800 dark:text-gray-200 mb-1 group-hover:text-purple-500 transition-colors">Müşteri Segmentasyonu</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Müşteri verilerinizi analiz ederek, onlara özel pazarlama stratejileri geliştirmenizi sağlıyorum.</p>
+</div>
+<div class="group">
+<h4 class="font-bold text-gray-800 dark:text-gray-200 mb-1 group-hover:text-purple-500 transition-colors">Tahminleme ve Fiyat Optimizasyonu</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Gelecekteki talebi ve fiyatlandırma fırsatlarını öngörerek kârlılığınızı artırıyorum.</p>
+</div>
+</div>
+<div class="mt-8 text-center">
+<a class="inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-gray-800 transition shadow-lg hover:shadow-xl" href="Projeler.html">
+                        Projeleri Görüntüleyin
+                    </a>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-primary to-gray-800 rounded-xl shadow-2xl overflow-hidden mb-16 relative">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-blue-500/20 blur-3xl"></div>
+<div class="relative z-10 px-8 py-12 md:px-12 md:py-16 text-center text-white">
+<h2 class="text-3xl md:text-4xl font-display font-bold mb-6">Veri Bilimi Uzmanına mı İhtiyacınız Var?</h2>
+<p class="text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Büyük bir veri ekibine veya yüksek bütçeli yazılımlara ihtiyacınız yok. Kaynaklarınızı en verimli şekilde kullanarak, işletmenize özel çözümler üretiyorum. Veri odaklı bir yaklaşımla işinizi nasıl büyütebileceğinizi konuşmak için benimle iletişime geçin.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="mailto:cagandemirmr@gmail.com"
+   class="px-8 py-3 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition shadow-lg transform hover:scale-105">
+   İletişime Geçin
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+<a href="Hakkımda.html"
+   class="inline-flex items-center justify-center px-8 py-3 border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 transition backdrop-blur-sm">
+   Hakkımda Daha Fazla
+</a>
+</div>
+</div>
+</div>
+<div class="mb-16">
+<h3 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-10 font-display">Müşteri Yorumları</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow border border-border-light dark:border-border-dark relative">
+<span class="absolute top-4 right-6 text-6xl text-gray-200 dark:text-gray-700 font-serif opacity-50">"</span>
+<p class="text-gray-600 dark:text-gray-300 italic mb-4 relative z-10">
+                        “Çağan ile çalışmak işimizi çok kolaylaştırdı. Müşteri verilerini analiz ederek bize doğru hedef kitleye ulaşma imkanı sağladı.”
+                    </p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">AK</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Ayşe K.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">E-ticaret Yöneticisi</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow border border-border-light dark:border-border-dark relative">
+<span class="absolute top-4 right-6 text-6xl text-gray-200 dark:text-gray-700 font-serif opacity-50">"</span>
+<p class="text-gray-600 dark:text-gray-300 italic mb-4 relative z-10">
+                        “Hazırladığı raporlar sayesinde fiyatlandırma stratejimizi yeniden düzenledik ve satışlarımız %15 arttı.”
+                    </p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">MD</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Mehmet D.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Turizm Şirketi</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-background-light dark:bg-black border-t border-border-light dark:border-gray-800 pt-16 pb-8 transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div class="space-y-4">
+<h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Adres</h5>
+<p class="text-sm text-gray-600 dark:text-gray-300">Urla, İzmir</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Telefon</h5>
+<p class="text-sm text-gray-600 dark:text-gray-300">(543) 513-1060</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Email</h5>
+<a class="text-sm text-gray-600 dark:text-gray-300 hover:text-accent transition" href="mailto:cagandemirmr@gmail.com">cagandemirmr@gmail.com</a>
+</div>
+<div class="space-y-4">
+<h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Sosyal Medya</h5>
+<div class="flex space-x-4">
+<a class="text-gray-400 hover:text-gray-600 dark:hover:text-white transition" href="https://www.linkedin.com/in/cagan-demir/">
+<span class="sr-only">LinkedIn</span>
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-gray-600 dark:hover:text-white transition" href="https://github.com/cagandemirmr">
+<span class="sr-only">GitHub</span>
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-border-light dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+<p>© UNTITLED | DESIGN: HTML5 UP</p>
+<p class="mt-2 md:mt-0">Redesigned with Tailwind CSS</p>
+</div>
+</div>
+</footer>
+<script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        // Check for saved theme preference or system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+    </script>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Veriyle Kazanın <br />
-						</h1>
-						<p>Her adım değil, doğru adım kazandırır.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-
-				<!-- Header -->
-					<header id="header">
-						<a href="projeler.html" class="logo">Çağan Demir</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-                            <li class="active"><a href="index.html">Anasayfa</a></li>
-							<li ><a href="projeler.html">Projeler</a></li>
-							<li><a href="apps.html">Uygulamalar</a></li>
-							<li ><a href="hakkımda.html">Hakkımda</a> </a></a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/cagan-demir/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/cagandemirmr" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-
-					<div id="main">
-
-					<div class="segment active">
-						<section class="posts">
-							<img src="images\datamoney4.webp?v=1" class="image-fit" fetchpriority="high"/>
-							<p>Rekabetin her geçen gün arttığı günümüz dünyasında, rakiplerinizden bir adım öne geçmek için sadece sezgilere güvenmek yeterli değil. Elinizdeki verileri bir hazineye dönüştürmeniz ve doğru içgörülerle hareket etmeniz gerekiyor.</p>
-
-							<h2>Veri Tabanlı Kararlar, Gerçek Sonuçlar</h2>
-							<p>İşletmenizin hangi alanda olursa olsun, veriler size yol gösterir. Peki, bu veriler size ne söylüyor?</p>
-							<ul>
-								<li><b>Emlak:</b> Hangi bölgelerdeki fiyatlar artıyor? En çok hangi tip gayrimenkullere talep var? Hangi müşteri segmentleri sizin için en kârlı?</li>
-								<li><b>E-ticaret:</b> Müşterileriniz sepetlerini neden terk ediyor? En çok hangi ürünler satıyor? Pazarlama kampanyalarınızın getirisi ne kadar?</li>
-								<li><b>Dijital Medya:</b> Hangi içerikleriniz en çok etkileşim alıyor? Hedef kitleniz hangi saatlerde en aktif? Rakiplerinizin stratejileri neler?</li>
-								<li><b>Turizm:</b> Hangi destinasyonlar popülerlik kazanıyor? Müşterileriniz ne tip tatil paketlerini tercih ediyor? Fiyatlandırma stratejinizi nasıl optimize edebilirsiniz?</li>
-
-							</ul>
-							<p>Ben, bu soruların cevaplarını bulmanıza ve elinizdeki ham veriyi, sizi başarıya taşıyacak somut stratejilere dönüştürmenize yardımcı oluyorum.</p>
-
-							<h2>Hizmetlerim</h2>
-
-							<ul>
-								<li><b>Veri Analizi ve Raporlama:</b> İşletmenizin mevcut verilerini analiz ederek, anlamlı raporlar ve görselleştirmeler hazırlıyorum.</li>
-								<li><b>Pazar ve Rakip Analizi:</b> Sektörünüzdeki trendleri ve rakiplerinizin stratejilerini inceleyerek rekabet avantajı sağlamanıza destek oluyorum.</li>
-								<li><b>Müşteri Segmentasyonu:</b> Müşteri verilerinizi analiz ederek, onlara özel pazarlama stratejileri geliştirmenizi sağlıyorum.</li>
-								<li><b>Tahminleme ve Fiyat Optimizasyonu:</b> Gelecekteki talebi ve fiyatlandırma fırsatlarını öngörerek kârlılığınızı artırıyorum.</li>
-							</ul>
-
-							<h2>Veri Bilimi Uzmanına mı İhtiyacınız Var?</h2>
-							<p>Büyük bir veri ekibine veya yüksek bütçeli yazılımlara ihtiyacınız yok. Kaynaklarınızı en verimli şekilde kullanarak, işletmenize özel çözümler üretiyorum.
-							Veri odaklı bir yaklaşımla işinizi nasıl büyütebileceğinizi konuşmak için benimle iletişime geçin.
-							</p>
-							<ul class="actions special">
-										<li><a href="projeler.html" class="button">Projeleri Görüntüleyin</a></li>
-									</ul>
-							
-							<h2>Müşterileri Yorumları</h2>
-							<blockquote>
-							"Çağan ile çalışmak işimizi çok kolaylaştırdı. Müşteri verilerini analiz ederek bize doğru hedef kitleye ulaşma imkanı sağladı."  
-							<footer>– Ayşe K., E-ticaret Yöneticisi</footer>
-							</blockquote>
-							<blockquote>
-							"Hazırladığı raporlar sayesinde fiyatlandırma stratejimizi yeniden düzenledik ve satışlarımız %15 arttı."  
-							<footer>– Mehmet D., Turizm Şirketi</footer>
-							</blockquote>
-							<blockquote>
-							"Çağanın hazırladığı uygulama sayesinde işlerimizin performansı %15 arttı"  
-							<footer>– Arzu T., Oyun Firması Yöneticisi</footer>
-							</blockquote>
-							<blockquote>
-							"Çağan sayesinde 10 kat daha fazla hastaya ulaşabildim."  
-							<footer>– Ahmet T., Doktor</footer>
-							</blockquote>
-
-							<ul class="actions special">
-										<li><a href="hakkımda.html" class="button">Hakkımda</a></li>
-							</ul>
-
-							<h2>Veri Bilimi Uzmanına mı İhtiyacınız Var?</h2>
-							<p>Büyük bir veri ekibine veya yüksek bütçeli yazılımlara ihtiyacınız yok. Kaynaklarınızı en verimli şekilde kullanarak, işletmenize özel çözümler üretiyorum.
-							Veri odaklı bir yaklaşımla işinizi nasıl büyütebileceğinizi konuşmak için benimle iletişime geçin.
-							</p>
-						</section>
-					</div>
-					</section>
-
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Adres</h3>
-								<p>Urla, İzmir</p>
-							</section>
-							<section>
-								<h3>Telefon</h3>
-								<p><a href="#">(543) 513-1060</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">cagandemirmr@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Sosyal Medya</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/cagan-demir/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/cagandemirmr" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/optimized.js?v=1" defer></script>
-			
-			<!-- Navbar görünürlük scripti -->
-			<script>
-				// Sayfa boyutu değiştiğinde navbar'ın görünür kalmasını sağla
-				window.addEventListener('resize', function() {
-					var nav = document.getElementById('nav');
-					if (nav) {
-						nav.style.display = 'flex';
-						nav.style.opacity = '1';
-						nav.style.visibility = 'visible';
-					}
-				});
-				
-				// Sayfa yüklendiğinde de aynı işlemi yap
-				window.addEventListener('load', function() {
-					var nav = document.getElementById('nav');
-					if (nav) {
-						nav.style.display = 'flex';
-						nav.style.opacity = '1';
-						nav.style.visibility = 'visible';
-					}
-				});
-
-				
-			document.addEventListener("DOMContentLoaded", function () {
-				const links = document.querySelectorAll("#subnav a");
-				const segments = document.querySelectorAll(".segment");
-
-				links.forEach(link => {
-				link.addEventListener("click", function (e) {
-					e.preventDefault();
-					const target = this.getAttribute("data-segment");
-
-					// Tüm segmentleri gizle
-					segments.forEach(seg => seg.style.display = "none");
-
-					// Seçilen segmenti göster
-					document.getElementById(target).style.display = "block";
-
-					// Aktif class'ı değiştir
-					links.forEach(l => l.parentElement.classList.remove("active"));
-					this.parentElement.classList.add("active");
-				});
-				});
-			});
-
-			</script>
-
-	</body>
-</html>
+</body></html>
